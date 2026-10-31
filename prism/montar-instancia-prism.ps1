@@ -1,4 +1,4 @@
-# Gera Rexvolution-Prism.zip para os amigos importarem no Prism Launcher (Adicionar instancia > Importar).
+# Gera Rexvolution.zip para os amigos importarem no Prism Launcher (Adicionar instancia > Importar).
 # Uso: .\prism\montar-instancia-prism.ps1 -Repo "usuario/repositorio" [-Branch main]
 param([Parameter(Mandatory)][string]$Repo, [string]$Branch = "main")
 $ErrorActionPreference = "Stop"
@@ -17,7 +17,7 @@ if (-not (Test-Path $jar)) {
 }
 Copy-Item $jar "$tmp\.minecraft\"
 
-$out = Join-Path (Split-Path $prism) "Rexvolution-Prism.zip"
+$out = Join-Path (Split-Path $prism) "Rexvolution.zip"
 Remove-Item $out -ErrorAction SilentlyContinue
 Compress-Archive "$tmp\*" $out
 Write-Host "Pronto: $out"

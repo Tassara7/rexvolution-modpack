@@ -305,7 +305,7 @@ metafile = true
 
 [[files]]
 file = "mods/caixadesom-1.0.0.jar"
-hash = "d495e7de84f6f07e1642b52318e45f144a89cd98ef12717e0cac82a362f20333"
+hash = "41e74fc0ad0a3ab13603535ccc1cb7ee3b039ac6a84aad88aad0f3347adee25c"
 
 [[files]]
 file = "mods/clumps.pw.toml"
