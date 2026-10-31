@@ -3,11 +3,11 @@ filename = "MouseTweaks-neoforge-mc26.3-2.31.jar"
 side = "client"
 
 [download]
-hash-format = "sha1"
-hash = "de224d4e3c270b749345c3a6703b51336a3ce5d3"
-mode = "metadata:curseforge"
+url = "https://cdn.modrinth.com/data/aC3cM3Vq/versions/f4tPRGDq/MouseTweaks-neoforge-mc26.3-2.31.jar"
+hash-format = "sha512"
+hash = "93e7ac34bbc15de635073722054b11fed3981e0f39954286e8a57214ce5ce007e5562882cb81cd230c8ea49970970c84548cfc598332c539777986090b090798"
 
 [update]
-[update.curseforge]
-file-id = 8890228
-project-id = 60089
+[update.modrinth]
+mod-id = "aC3cM3Vq"
+version = "f4tPRGDq"

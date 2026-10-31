@@ -3,11 +3,11 @@ filename = "balm-neoforge-26.3-26.3.0.3.jar"
 side = "both"
 
 [download]
-hash-format = "sha1"
-hash = "a42f20df25844e8cbf198d43f9b21fc0ed91344d"
-mode = "metadata:curseforge"
+url = "https://cdn.modrinth.com/data/MBAkmtvl/versions/QcBcRJZb/balm-neoforge-26.3-26.3.0.3.jar"
+hash-format = "sha512"
+hash = "7e741916eb3893f5732902cbda274284ef32aad9bcf0686fe0321fc43323061c8ae7fedaed574e613623fced59150f6237ddbfa6e6dd3339fef06798b91f3f6e"
 
 [update]
-[update.curseforge]
-file-id = 9035246
-project-id = 531761
+[update.modrinth]
+mod-id = "MBAkmtvl"
+version = "QcBcRJZb"

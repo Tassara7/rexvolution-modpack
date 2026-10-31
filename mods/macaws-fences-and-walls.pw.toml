@@ -3,11 +3,11 @@ filename = "mcw-fences-1.2.1-mc26.3neoforge.jar"
 side = "both"
 
 [download]
-hash-format = "sha1"
-hash = "072fcbd44b193a3d3c8dc33c604850d3a0e43401"
-mode = "metadata:curseforge"
+url = "https://cdn.modrinth.com/data/GmwLse2I/versions/FqeBH5BQ/mcw-fences-1.2.1-mc26.3neoforge.jar"
+hash-format = "sha512"
+hash = "350109bfcf7c60dc823e5ba5a4a7dcdabec0e54ebf79fa187edba48ae1635964ecb69a6bed1f26fcd10cb73b01db98afdf02f0bbd3f5eee2583531a43f5e09c7"
 
 [update]
-[update.curseforge]
-file-id = 9007657
-project-id = 453925
+[update.modrinth]
+mod-id = "GmwLse2I"
+version = "FqeBH5BQ"

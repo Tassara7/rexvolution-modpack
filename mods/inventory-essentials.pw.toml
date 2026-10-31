@@ -3,11 +3,11 @@ filename = "inventoryessentials-neoforge-26.3-26.3.0.5.jar"
 side = "both"
 
 [download]
-hash-format = "sha1"
-hash = "2220078e68a18a6ab7f2fc71d216f01c6668d4ab"
-mode = "metadata:curseforge"
+url = "https://cdn.modrinth.com/data/Boon8xwi/versions/cg4gtBXU/inventoryessentials-neoforge-26.3-26.3.0.5.jar"
+hash-format = "sha512"
+hash = "c58849105130ad1059dbde6588b914c1ee9f8bb1906287a564bbbebb23b128af22ae81c0e6f0c144813d73f0fe58515c81f2cf65984f179647f4f1858002c15a"
 
 [update]
-[update.curseforge]
-file-id = 9142794
-project-id = 368825
+[update.modrinth]
+mod-id = "Boon8xwi"
+version = "cg4gtBXU"

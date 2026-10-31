@@ -3,11 +3,11 @@ filename = "mcw-doors-1.1.5-mc26.3neoforge.jar"
 side = "both"
 
 [download]
-hash-format = "sha1"
-hash = "4f076eb7560f77f233a229ff3a73821f3b84bd13"
-mode = "metadata:curseforge"
+url = "https://cdn.modrinth.com/data/kNxa8z3e/versions/E2VcPSnN/mcw-doors-1.1.5-mc26.3neoforge.jar"
+hash-format = "sha512"
+hash = "0334d495b433aab9144c4872275b8748c1574853f908d36eacc7a9438a0c19b7bb6671c335a9066cdb04f5ee406f4776fb46fdf5d9df8af546e6419ee7dfe1d7"
 
 [update]
-[update.curseforge]
-file-id = 9007650
-project-id = 378646
+[update.modrinth]
+mod-id = "kNxa8z3e"
+version = "E2VcPSnN"

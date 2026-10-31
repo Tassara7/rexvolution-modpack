@@ -3,11 +3,11 @@ filename = "shogi-neoforge-26.3-26.3.0.3.jar"
 side = "both"
 
 [download]
-hash-format = "sha1"
-hash = "b639f1025fc28985aa1f68ea43cc9abcb7784b90"
-mode = "metadata:curseforge"
+url = "https://cdn.modrinth.com/data/bi4iCmsw/versions/wFw6qDQV/shogi-neoforge-26.3-26.3.0.3.jar"
+hash-format = "sha512"
+hash = "51e57e3f262ad3e055245486a8ea3376db42eee93024492f38554fafae6e75c966df05442ddf96369bff6c8d11415258e2bac8c7b747bb4de40885dfa8e7c05d"
 
 [update]
-[update.curseforge]
-file-id = 8978491
-project-id = 1475746
+[update.modrinth]
+mod-id = "bi4iCmsw"
+version = "wFw6qDQV"

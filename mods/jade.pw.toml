@@ -3,11 +3,11 @@ filename = "Jade-mc26.3-NeoForge-26.3.5.jar"
 side = "both"
 
 [download]
-hash-format = "sha1"
-hash = "add5199928930724adbe6f9dfaaf646bd1027294"
-mode = "metadata:curseforge"
+url = "https://cdn.modrinth.com/data/nvQzSEkH/versions/dVB8U7Td/Jade-mc26.3-NeoForge-26.3.5.jar"
+hash-format = "sha512"
+hash = "32219fb2a8b004d027179bdf2707647be4c08ab374ca5204432d63601e7e4cbc4f4574273289bb867a8afa476db63a69a5a0d08746e9bc134d52eb41489e3add"
 
 [update]
-[update.curseforge]
-file-id = 9042207
-project-id = 324717
+[update.modrinth]
+mod-id = "nvQzSEkH"
+version = "dVB8U7Td"

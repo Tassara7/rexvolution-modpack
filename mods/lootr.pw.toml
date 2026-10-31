@@ -3,11 +3,11 @@ filename = "lootr-neoforge-26.3-1.25.42.124.jar"
 side = "both"
 
 [download]
-hash-format = "sha1"
-hash = "3f50747bfbca75afdfe8cb6cb2b1ed0ff8bc7a9c"
-mode = "metadata:curseforge"
+url = "https://cdn.modrinth.com/data/EltpO5cN/versions/PdFGq3vT/lootr-neoforge-26.3-1.25.42.124.jar"
+hash-format = "sha512"
+hash = "e4046fb42bc66584c7b3c1c96063afc95bf8fc2bd45a00b53420ac43f0ed593c8bbd7682d8d1c9225f9529dea399423a9935b36692606d52d39f6a29e7b4508d"
 
 [update]
-[update.curseforge]
-file-id = 8987243
-project-id = 361276
+[update.modrinth]
+mod-id = "EltpO5cN"
+version = "PdFGq3vT"

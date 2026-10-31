@@ -3,11 +3,11 @@ filename = "Iceberg-26.3-neoforge-1.4.3.2.jar"
 side = "both"
 
 [download]
-hash-format = "sha1"
-hash = "f4d07b36d194151479335f952588d119ed951d57"
-mode = "metadata:curseforge"
+url = "https://cdn.modrinth.com/data/5faXoLqX/versions/cMrzvYxJ/Iceberg-26.3-neoforge-1.4.3.2.jar"
+hash-format = "sha512"
+hash = "613b90f0a976b5fae2493b7d4502f1fea311738c358762d16b68e8184f0794b722714133f164f3ad22360f29ba55d747d4c6d1fbe778a18fa2a2dbf0b53cbd53"
 
 [update]
-[update.curseforge]
-file-id = 9134438
-project-id = 520110
+[update.modrinth]
+mod-id = "5faXoLqX"
+version = "cMrzvYxJ"

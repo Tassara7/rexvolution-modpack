@@ -3,11 +3,11 @@ filename = "entityculling-neoforge-1.11.3-mc26.3.jar"
 side = "client"
 
 [download]
-hash-format = "sha1"
-hash = "75df6fa16449e91f9a20cd5f6ce5db9b3b972938"
-mode = "metadata:curseforge"
+url = "https://cdn.modrinth.com/data/NNAgCjsB/versions/YWSFNKio/entityculling-neoforge-1.11.3-mc26.3.jar"
+hash-format = "sha512"
+hash = "129b94d59a6ff5513e3dca34a59aadb9eefedde8508bdbfb6997146647971fb5a49b5e111353753955888ddefc886a7893637951088c759ed3b0390b61cfe7e0"
 
 [update]
-[update.curseforge]
-file-id = 9100316
-project-id = 448233
+[update.modrinth]
+mod-id = "NNAgCjsB"
+version = "YWSFNKio"

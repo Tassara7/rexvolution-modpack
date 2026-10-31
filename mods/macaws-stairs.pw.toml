@@ -3,11 +3,11 @@ filename = "mcw-stairs-1.0.2-mc26.3neoforge.jar"
 side = "both"
 
 [download]
-hash-format = "sha1"
-hash = "49ab328d21f5c3aed88e2525cf51ff4906d72729"
-mode = "metadata:curseforge"
+url = "https://cdn.modrinth.com/data/iP3wH1ha/versions/SxwPujmc/mcw-stairs-1.0.2-mc26.3neoforge.jar"
+hash-format = "sha512"
+hash = "ee0962cf6fa6545ac94820bbeb38c01e0ff4a438a5abc867f5ecc36ce65aee080bab79eb424222f1ef7f780751ea0099be96f062daefcc793b5773abcd029f34"
 
 [update]
-[update.curseforge]
-file-id = 9007664
-project-id = 1119394
+[update.modrinth]
+mod-id = "iP3wH1ha"
+version = "SxwPujmc"

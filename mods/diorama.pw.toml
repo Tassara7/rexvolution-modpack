@@ -1,13 +1,13 @@
 name = "Diorama"
-filename = "diorama-0.6.0-neoforge-26.3.jar"
+filename = "diorama-0.6.0+neoforge-26.3.jar"
 side = "both"
 
 [download]
-hash-format = "sha1"
-hash = "928cd2bf4b2bbfc2191ba74fa26a1962c6d54380"
-mode = "metadata:curseforge"
+url = "https://cdn.modrinth.com/data/kwpTgbCk/versions/Gz61B8uF/diorama-0.6.0%2Bneoforge-26.3.jar"
+hash-format = "sha512"
+hash = "5674919500b5766f3b1b78d6f408b4555b2bd0434542a5bda59d774358eaf31e1ab6127d8c9d447c274a719f62a6003d3e46be54585b98f0ec90f6dc081e5bd0"
 
 [update]
-[update.curseforge]
-file-id = 9367245
-project-id = 1748961
+[update.modrinth]
+mod-id = "kwpTgbCk"
+version = "Gz61B8uF"

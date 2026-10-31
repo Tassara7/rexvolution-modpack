@@ -3,11 +3,11 @@ filename = "mcw-furniture-3.4.2-mc26.3neoforge.jar"
 side = "both"
 
 [download]
-hash-format = "sha1"
-hash = "f8aed8896b25c9fcd205aa22663ca3383c03b56d"
-mode = "metadata:curseforge"
+url = "https://cdn.modrinth.com/data/dtWC90iB/versions/uozKZar1/mcw-furniture-3.4.2-mc26.3neoforge.jar"
+hash-format = "sha512"
+hash = "0bd481f1c29ec86a82a366fcdc63118eacd952638637142f62d98afa1be65cef903878aadb8ef99fd1b93b04a4a3b0af33e6395b6fa9c510b17574849c520fa5"
 
 [update]
-[update.curseforge]
-file-id = 9007573
-project-id = 359540
+[update.modrinth]
+mod-id = "dtWC90iB"
+version = "uozKZar1"

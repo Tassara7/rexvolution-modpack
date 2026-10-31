@@ -3,11 +3,11 @@ filename = "Highlighter-26.3-neoforge-1.2.3.jar"
 side = "both"
 
 [download]
-hash-format = "sha1"
-hash = "499b71dfe26281f68316bf626a057b9129566456"
-mode = "metadata:curseforge"
+url = "https://cdn.modrinth.com/data/cVNW5lr6/versions/CVPGTfCd/Highlighter-26.3-neoforge-1.2.3.jar"
+hash-format = "sha512"
+hash = "df63b42713a2dd3aba4b179907c8588f96426076cf2afb514af9cb3cfa9b2e9943d86f0e74918d65477cc0ce21387b5f3bf7b81db5aee37d3b21a95e9d91e46d"
 
 [update]
-[update.curseforge]
-file-id = 8948678
-project-id = 521590
+[update.modrinth]
+mod-id = "cVNW5lr6"
+version = "CVPGTfCd"

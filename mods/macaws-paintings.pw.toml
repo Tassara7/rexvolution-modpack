@@ -3,11 +3,11 @@ filename = "mcw-paintings-1.1.0-mc26.3neoforge.jar"
 side = "both"
 
 [download]
-hash-format = "sha1"
-hash = "10aac05aff143c299329dfd6c453f035b6ec396e"
-mode = "metadata:curseforge"
+url = "https://cdn.modrinth.com/data/okE6QVAY/versions/NXlg5qRA/mcw-paintings-1.1.0-mc26.3neoforge.jar"
+hash-format = "sha512"
+hash = "66b7a3b71ffc31c8da655653d564ed9b6d3a51f80c4549f3e11fc4144304836c05160dc93c1185f4b292e140fdf98760ac8139f44a1a17ff5adb801903c023f5"
 
 [update]
-[update.curseforge]
-file-id = 9007580
-project-id = 438116
+[update.modrinth]
+mod-id = "okE6QVAY"
+version = "NXlg5qRA"

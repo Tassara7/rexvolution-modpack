@@ -3,11 +3,11 @@ filename = "vitrail-0.13.0-beta+mc26.3.jar"
 side = "client"
 
 [download]
-hash-format = "sha1"
-hash = "4535f7b2d81efd1683961468d47236595b066043"
-mode = "metadata:curseforge"
+url = "https://cdn.modrinth.com/data/oSIKhgz3/versions/Q3nKuPKJ/vitrail-0.13.0-beta%2Bmc26.3.jar"
+hash-format = "sha512"
+hash = "b4915c8251614a3457c7c226f62b7c39c44219a7e5cc6e9a099f55f7a5d171b58e8df7ca9367d72dfc307732a771e3af3c7672879536edacbe1a595105018298"
 
 [update]
-[update.curseforge]
-file-id = 9163952
-project-id = 1649385
+[update.modrinth]
+mod-id = "oSIKhgz3"
+version = "Q3nKuPKJ"

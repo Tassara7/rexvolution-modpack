@@ -3,11 +3,11 @@ filename = "appleskin-neoforge-mc26.3-3.0.10.jar"
 side = "both"
 
 [download]
-hash-format = "sha1"
-hash = "1eaf890236c4d0815a3bd0933fd55174ff6249cd"
-mode = "metadata:curseforge"
+url = "https://cdn.modrinth.com/data/EsAfCjCV/versions/6vok7cLb/appleskin-neoforge-mc26.3-3.0.10.jar"
+hash-format = "sha512"
+hash = "a454c90af544a63fb904709987513122706b8b26f97bcb2d36458f99697754ae4b32d2e275c77dae9d448cfa236497e0de36677cc0c4e002f78feddbe04449ef"
 
 [update]
-[update.curseforge]
-file-id = 8907904
-project-id = 248787
+[update.modrinth]
+mod-id = "EsAfCjCV"
+version = "6vok7cLb"

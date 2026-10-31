@@ -3,11 +3,11 @@ filename = "mcw-windows-2.4.2-mc26.3neoforge.jar"
 side = "both"
 
 [download]
-hash-format = "sha1"
-hash = "954c8f7e569d6e6c21ce7d3296c256f6219b5767"
-mode = "metadata:curseforge"
+url = "https://cdn.modrinth.com/data/C7I0BCni/versions/Zd88JogC/mcw-windows-2.4.2-mc26.3neoforge.jar"
+hash-format = "sha512"
+hash = "b84161867a97956480fe378c234f898db4028421736fb259be10eb7fef48b103090d973b650b5a95118ba00995965db407a6fc57ef3dd9f88fb1a11c1064e8ed"
 
 [update]
-[update.curseforge]
-file-id = 9007587
-project-id = 363569
+[update.modrinth]
+mod-id = "C7I0BCni"
+version = "Zd88JogC"
