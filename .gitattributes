@@ -1,4 +1,2 @@
-* text=auto eol=lf
-*.jar binary
-*.png binary
-*.zip binary
+# Guardar os arquivos exatamente como estao: o index.toml do packwiz confere o hash byte a byte.
+* -text
