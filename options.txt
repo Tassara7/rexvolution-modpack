@@ -1,2 +1,3 @@
 version:5023
+preferredGraphicsBackend:"vulkan"
 key_key.vitrail.reload_pack:key.keyboard.unknown
