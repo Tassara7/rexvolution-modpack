@@ -1,0 +1,5 @@
+pack=ComplementaryReimagined_r5.9.3.zip
+enabled=true
+shadowdistance=32
+renderscale=100
+shadowmapscale=100

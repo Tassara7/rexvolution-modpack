@@ -1,0 +1,13 @@
+name = "Nature's Compass"
+filename = "NaturesCompass-26.3-3.3.1-neoforge.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "4f08244647fe9a49e55e17c7b152b51663b0f534"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 9064133
+project-id = 252848

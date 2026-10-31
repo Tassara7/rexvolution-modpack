@@ -1,0 +1,4 @@
+#Tamanho máximo do cache de músicas convertidas neste cliente, em MB.
+# Default: 500
+# Range: 16 ~ 1000000
+cacheMaxMb = 500

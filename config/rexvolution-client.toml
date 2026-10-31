@@ -1,0 +1,23 @@
+#Luz dinamica (RF58): precisa do mod LambDynamicLights; sem ele esta opcao nao faz nada.
+#OFF = nenhuma luz do mod. PARTIAL = so os efeitos de ataque (jato do T-Rex de Fogo, Orbe do Eclipse, rugido do Rock).
+#FULL (padrao) = tambem o corpo do T-Rex de Fogo, do Eclipse e do Rock. Vale na hora, sem reiniciar.
+#Allowed Values: OFF, PARTIAL, FULL
+dynamicLights = "FULL"
+#No modo FULL, no maximo este numero de dinossauros com o CORPO aceso ao mesmo tempo (os mais proximos da camera).
+#Jato, Orbe, impacto e rugido nao contam neste teto.
+# Default: 6
+# Range: 0 ~ 32
+maxLitDinos = 20
+#Onde ficam os icones e barras de habilidade montado: perto da mira (CROSSHAIR) ou em cima da barra de vida do dino (HEALTH).
+#Allowed Values: CROSSHAIR, HEALTH
+abilityHud = "HEALTH"
+
+[mountCamera]
+	#Multiplica a distancia da camera em 3a pessoa montado num dinossauro. Tambem muda com Ctrl + rodinha.
+	# Default: 1.0
+	# Range: 0.5 ~ 3.0
+	mountCameraZoom = 2.0
+	#Ao montar, volta a 1a/3a pessoa usada por ultimo naquela especie; ao desmontar, volta a de antes.
+	rememberMountCamera = true
+	#Gravado automaticamente: <especie>=<FIRST_PERSON|THIRD_PERSON_BACK|THIRD_PERSON_FRONT>.
+	mountCameraBySpecies = ["fire_trex=FIRST_PERSON", "mosasaurus_pirate=FIRST_PERSON", "quetzalcoatlus=FIRST_PERSON", "jet_quetzalcoatlus=THIRD_PERSON_BACK", "spinosaurus_surfer=FIRST_PERSON"]

@@ -1,0 +1,5 @@
+# Fora do pack (nao vai para os jogadores)
+prism/
+README.md
+.gitignore
+.gitattributes

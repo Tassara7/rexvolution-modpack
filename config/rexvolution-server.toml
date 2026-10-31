@@ -1,0 +1,2811 @@
+#Variação individual (RF05): ao nascer, cada dinossauro sorteia um fator de tamanho e um de velocidade.
+#1.0 é o normal da espécie. Só vale para quem nasce depois da mudança: os que já existem mantêm o valor salvo.
+[variation]
+	#Menor fator de tamanho sorteado ao nascer. Escala e caixa de colisão seguem o fator; vida máxima e dano seguem a raiz dele.
+	#Se ficar maior que sizeMax, os dois são trocados (e um aviso vai para o log).
+	# Default: 0.65
+	# Range: 0.25 ~ 3.0
+	sizeMin = 0.65
+	#Maior fator de tamanho sorteado ao nascer. Com sizeMin igual a sizeMax, todo dinossauro novo nasce com esse tamanho.
+	# Default: 1.35
+	# Range: 0.25 ~ 3.0
+	sizeMax = 1.35
+	#Menor fator de velocidade sorteado ao nascer. Se ficar maior que speedMax, os dois são trocados.
+	# Default: 0.8
+	# Range: 0.5 ~ 2.0
+	speedMin = 0.8
+	#Maior fator de velocidade sorteado ao nascer.
+	# Default: 1.2
+	# Range: 0.5 ~ 2.0
+	speedMax = 1.2
+
+#Domar (RF01).
+[taming]
+	#Chance de domar a cada comida certa: 1 em N. Com 1, a primeira comida já doma.
+	# Default: 6
+	# Range: 1 ~ 100
+	tameChance = 6
+	#Fração da vida máxima a partir da qual um carnívoro selvagem está "ferido": fica lento, foge e aceita carne para domar.
+	#Também é onde a barra de vida da Lupa fica vermelha.
+	# Default: 0.2
+	# Range: 0.05 ~ 1.0
+	weakHealthFraction = 0.2
+
+#Mordida montada do T-Rex (RF07). Vale na hora, também para o ícone de recarga de quem joga no servidor.
+[mountedBite]
+	#A mordida montada causa o dano de ataque do T-Rex (já com a variação de tamanho) vezes este fator.
+	# Default: 1.5
+	# Range: 0.1 ~ 5.0
+	damageMultiplier = 1.5
+	#Recarga da mordida montada, em ticks (20 ticks = 1 segundo). Com 0, morde a cada aperto.
+	# Default: 40
+	# Range: 0 ~ 200
+	cooldownTicks = 40
+	#Alcance base da mordida montada, em blocos. O alcance final soma a largura do T-Rex.
+	# Default: 3.0
+	# Range: 1.0 ~ 8.0
+	baseReach = 3.0
+
+#Golpe de cauda do Estegossauro (RF10). Vale na hora.
+[tailSwipe]
+	#Recarga do golpe de cauda, em ticks (20 ticks = 1 segundo). Conta só enquanto ele está atacando. Com 0, golpeia assim que o alvo está ao alcance. Vale também para o golpe montado (tecla de ataque montado), que conta em tempo real.
+	# Default: 60
+	# Range: 0 ~ 200
+	cooldownTicks = 60
+	#RF53: recarga do golpe de cauda do Estegossauro DOMADO sem cavaleiro (IA), em ticks. O golpe montado e o do selvagem usam a recarga acima.
+	# Default: 40
+	# Range: 0 ~ 200
+	aiCooldownTicks = 40
+	#Alcance base do golpe de cauda, em blocos, do centro do Estegossauro ao centro do alvo, no tamanho base da espécie. Vale também para o golpe montado.
+	#Estegossauros maiores ou menores (variação de tamanho) alcançam proporcionalmente mais ou menos.
+	# Default: 3.0
+	# Range: 1.0 ~ 8.0
+	baseReach = 3.0
+
+#Chifrada montada do Triceratops (RF16). Vale na hora, também para o ícone de recarga de quem joga no servidor.
+[mountedGore]
+	#Recarga da chifrada montada, em ticks (20 ticks = 1 segundo). Com 0, chifra a cada aperto.
+	# Default: 30
+	# Range: 0 ~ 1200
+	cooldownTicks = 30
+	#RF53: recarga da chifrada do Triceratops DOMADO sem cavaleiro (IA), em ticks. A chifrada montada usa a recarga acima.
+	# Default: 30
+	# Range: 0 ~ 1200
+	aiCooldownTicks = 30
+	#Alcance base da chifrada montada, em blocos, além do corpo: o alcance final, de centro a centro, soma a metade da largura do Triceratops e a metade da largura do alvo.
+	#Só atinge quem está à frente, num cone de 90 graus. O dano é o ataque do Triceratops e a repulsão é a dele.
+	# Default: 3.0
+	# Range: 1.0 ~ 8.0
+	baseReach = 3.0
+
+#Jato do T-Rex de Fogo (RF18): o lança-chamas que substitui a mordida. Vale na hora, também para a barra de chama de quem joga no servidor.
+[fireBreath]
+	#Duração da carga cheia em jato contínuo, em ticks (20 ticks = 1 segundo). 80 = 4 segundos.
+	# Default: 80
+	# Range: 10 ~ 1200
+	durationTicks = 80
+	#Tempo para encher a carga do vazio ao cheio, em ticks. Começa assim que ele para de baforar. Na água ou na chuva não recarrega. 120 = 6 segundos.
+	# Default: 120
+	# Range: 10 ~ 2400
+	rechargeTicks = 120
+	#Dano de cada golpe do jato (em pontos de vida; 2 = 1 coração). Vale para as cores comuns.
+	# Default: 3.0
+	# Range: 0.0 ~ 40.0
+	damage = 3.0
+	#Dano de cada golpe do jato azul do albino.
+	# Default: 4.5
+	# Range: 0.0 ~ 40.0
+	albinoDamage = 4.5
+	#Alcance do jato, em blocos, contados da boca (padrão 10; vai até 16). Quem já tem o arquivo de configuração de uma versão antiga mantém o valor salvo (6): apague a linha ou o arquivo para voltar ao padrão.
+	# Default: 10.0
+	# Range: 1.0 ~ 16.0
+	range = 10.0
+	#Abertura TOTAL do cone do jato, em graus (30 = 15 graus para cada lado da direção em que ele aponta). Até a versão RF18 este valor era a abertura de cada lado; agora é a abertura toda. O dano e o desenho do jato usam o mesmo cone.
+	# Default: 30
+	# Range: 10 ~ 160
+	coneDegrees = 30
+	#De quantos em quantos ticks o jato causa dano enquanto está ligado (10 = a cada meio segundo). Também é de quanto em quanto tempo ele procura vítimas.
+	# Default: 10
+	# Range: 1 ~ 100
+	hitIntervalTicks = 10
+	#Se ligado, o jato também acende fogo no bloco que atinge, de vez em quando, mas só com a regra mobGriefing ligada.
+	burnsBlocks = false
+
+#Rugido sônico do T-Rex do Rock (RF21): no lugar da mordida quando montado (tecla de ataque montado). Vale na hora, também para o ícone de recarga de quem joga no servidor.
+[rockRoar]
+	#Recarga do rugido, em ticks (20 ticks = 1 segundo). 60 = 3 segundos. Com 0, ruge a cada aperto.
+	# Default: 60
+	# Range: 0 ~ 1200
+	cooldownTicks = 60
+	#Dano TOTAL do rugido em cada alvo do cone (em pontos de vida; 2 = 1 coração): cada um dos 3 anéis dá 1/3. 4 = 2 corações.
+	# Default: 10.4
+	# Range: 0.0 ~ 40.0
+	damage = 10.4
+	#Alcance do rugido, em blocos, contados da boca (padrão 10).
+	# Default: 10.0
+	# Range: 1.0 ~ 16.0
+	range = 10.0
+	#Abertura TOTAL do cone do rugido, em graus (60 = 30 graus para cada lado da direção em que o piloto olha). Não atinge o piloto, o dono nem os domados do dono.
+	# Default: 60
+	# Range: 10 ~ 160
+	coneDegrees = 60
+	#Força TOTAL do empurrão do rugido, além da repulsão do dano (padrão 1.6; cada um dos 3 anéis dá 1/3; a repulsão normal do jogo é 0.4 por golpe). Quem resiste à repulsão é empurrado menos.
+	# Default: 1.6
+	# Range: 0.0 ~ 5.0
+	knockback = 1.6
+	#Quanto tempo quem foi atingido fica com Lentidão II, em ticks (60 = 3 segundos). Com 0, não aplica o efeito.
+	# Default: 60
+	# Range: 0 ~ 600
+	slownessTicks = 60
+	#Multiplicador da mordida do T-Rex do Rock sem piloto sobre a mordida do T-Rex (1.3 = 30% a mais).
+	# Default: 1.3
+	# Range: 1.0 ~ 3.0
+	biteMultiplier = 1.3
+
+#Onda pop do T-Rex do Pop (RF60): o mesmo rugido do Rock (3 anéis), mas num cone mais estreito e mais longo. No lugar da mordida quando montado. Sem piloto, a mordida usa o multiplicador do Rock (rockRoar.biteMultiplier). Vale na hora.
+[popRoar]
+	#Recarga da onda, em ticks (20 ticks = 1 segundo). 60 = 3 segundos. Com 0, ruge a cada aperto.
+	# Default: 60
+	# Range: 0 ~ 1200
+	cooldownTicks = 60
+	#Dano TOTAL da onda em cada alvo do cone (em pontos de vida; 2 = 1 coração): cada um dos 3 anéis dá 1/3. 10.4 = 5,2 corações.
+	# Default: 10.4
+	# Range: 0.0 ~ 40.0
+	damage = 10.4
+	#Alcance da onda, em blocos, contados da boca (padrão 22).
+	# Default: 22.0
+	# Range: 1.0 ~ 48.0
+	range = 22.0
+	#Abertura TOTAL do cone da onda, em graus (30 = 15 graus para cada lado da direção em que o piloto olha). Não atinge o piloto, o dono nem os domados do dono.
+	# Default: 30
+	# Range: 10 ~ 160
+	coneDegrees = 30
+	#Força TOTAL do empurrão da onda, além da repulsão do dano (padrão 1.6; cada um dos 3 anéis dá 1/3).
+	# Default: 1.6
+	# Range: 0.0 ~ 5.0
+	knockback = 1.6
+	#Quanto tempo quem foi atingido fica com Lentidão II, em ticks (60 = 3 segundos). Com 0, não aplica o efeito.
+	# Default: 60
+	# Range: 0 ~ 600
+	slownessTicks = 60
+
+#T-Rex de Netherite (RF62): atributos e o ovo do bastião. O ovo esquenta com o jato do T-Rex de Fogo e choca sozinho.
+[netheriteTRex]
+	#Vida máxima base do T-Rex de Netherite (o T-Rex tem 200; 300 = 150 corações). Vale ao nascer ou carregar.
+	# Default: 300.0
+	# Range: 20.0 ~ 2048.0
+	maxHealth = 300.0
+	#Armadura do T-Rex de Netherite (10 = 5 escudos). Vale ao nascer ou carregar.
+	# Default: 10.0
+	# Range: 0.0 ~ 30.0
+	armor = 10.0
+	#Velocidade do T-Rex de Netherite em relação à do T-Rex (0.7 = 70%), andando, correndo e montado. Vale ao nascer ou carregar.
+	# Default: 0.7
+	# Range: 0.2 ~ 2.0
+	speedMultiplier = 0.7
+	#Quanto tempo o jato do T-Rex de Fogo precisa acertar o ovo para ele ficar quente, em ticks (40 = 2 segundos).
+	# Default: 40
+	# Range: 1 ~ 1200
+	heatTicks = 40
+	#Depois de quente, quanto tempo o ovo leva para chocar, em ticks (200 = 10 segundos). Não volta atrás.
+	# Default: 200
+	# Range: 20 ~ 72000
+	hatchTicks = 200
+	#Pisão (RF183): ticks segurando R para virar pisão ao soltar (antes disso é toque = mordida).
+	# Default: 6
+	# Range: 2 ~ 40
+	stompHoldTicks = 6
+	#Pisão (RF183): recarga do pisão, em ticks (100 = 5 segundos).
+	# Default: 100
+	# Range: 0 ~ 1200
+	stompCooldownTicks = 100
+	#Pisão (RF183): dano em área ao redor do T-Rex de Netherite.
+	# Default: 22.0
+	# Range: 0.0 ~ 1000.0
+	stompDamage = 22.0
+	#Pisão (RF183): raio da onda de choque no chão, em blocos.
+	# Default: 5.0
+	# Range: 1.0 ~ 16.0
+	stompRadius = 5.0
+	#Pisão (RF183): força do empurrão para fora e para cima.
+	# Default: 1.4
+	# Range: 0.0 ~ 5.0
+	stompKnockback = 1.4
+
+#Triceratops do Fim (RF63a): atributos em relacao ao Triceratops, frutas do chorus para transformar e a habilidade de carga com teleporte (RF63b).
+[endTriceratops]
+	#Vida máxima base do Triceratops do Fim em relação à do Triceratops configurado (1.25 = 25% a mais). Vale ao nascer ou carregar.
+	# Default: 1.25
+	# Range: 0.1 ~ 10.0
+	healthMultiplier = 1.25
+	#Dano da chifrada do Triceratops do Fim em relação ao do Triceratops configurado (1.25 = 25% a mais). Vale ao nascer ou carregar.
+	# Default: 1.25
+	# Range: 0.1 ~ 10.0
+	goreDamageMultiplier = 1.25
+	#Armadura a mais do Triceratops do Fim sobre a do Triceratops (2 = 1 escudo). Vale ao nascer ou carregar.
+	# Default: 2.0
+	# Range: -6.0 ~ 24.0
+	armorBonus = 2.0
+	#Quantas frutas do chorus o dono dá a um Triceratops domado e adulto para ele virar Triceratops do Fim. Cada fruta antes da última o faz pular um pouco.
+	# Default: 8
+	# Range: 1 ~ 64
+	chorusToTransform = 8
+	#Habilidade de teleporte (RF63b): quanto tempo segurando a tecla de ataque montado até carregar, em ticks (40 = 2 segundos).
+	# Default: 40
+	# Range: 1 ~ 600
+	chargeTicks = 40
+	#Habilidade de teleporte (RF63b): quanto tempo a carga pode ser segurada, em ticks (120 = 6 segundos). Passando disso a carga se perde.
+	# Default: 120
+	# Range: 1 ~ 1200
+	maxHoldTicks = 120
+	#Habilidade de teleporte (RF63b): recarga depois de usar, em ticks (100 = 5 segundos).
+	# Default: 100
+	# Range: 0 ~ 6000
+	cooldownTicks = 100
+	#Habilidade de teleporte (RF63b): alcance máximo até o alvo, em blocos.
+	# Default: 50.0
+	# Range: 3.0 ~ 96.0
+	teleportRange = 50.0
+	#Habilidade de teleporte (RF63b): a chifrada depois do teleporte causa o dano normal vezes isto.
+	# Default: 1.5
+	# Range: 0.0 ~ 20.0
+	teleportDamageMultiplier = 1.5
+	#Habilidade de teleporte (RF63b): tolerância da mira, em graus, para escolher o alvo à frente de quem monta.
+	# Default: 10
+	# Range: 1 ~ 90
+	aimToleranceDeg = 10
+	#Habilidade de teleporte (RF63b): distância mínima do alvo, em blocos, para a IA (sem piloto) usar o teleporte.
+	# Default: 8.0
+	# Range: 0.0 ~ 64.0
+	aiMinRange = 8.0
+	#Salto do Fim: alcance da mira em blocos (bloco mirado ou à frente).
+	# Default: 18.0
+	# Range: 2.0 ~ 48.0
+	blinkDistance = 18.0
+	#Recarga da habilidade do R (Salto do Fim); depois da Super Chifrada montada vale o dobro.
+	# Default: 60
+	# Range: 0 ~ 1200
+	blinkCooldownTicks = 60
+
+#Triceratops do Trovão (RF64): relâmpago (segurar a tecla de ataque montado) e corrida eletrizada. Vida, dano e velocidade são os do Triceratops.
+[thunderTriceratops]
+	#Relâmpago: quanto tempo segurando a tecla até o raio cair, em ticks (50 = 2,5 segundos).
+	# Default: 50
+	# Range: 1 ~ 1200
+	chargeTicks = 50
+	#Relâmpago: o mesmo, com chuva ou tempestade no lugar do bicho, em ticks (20 = 1 segundo).
+	# Default: 20
+	# Range: 1 ~ 1200
+	rainChargeTicks = 20
+	#Relâmpago: recarga depois do raio, em ticks (200 = 10 segundos).
+	# Default: 200
+	# Range: 0 ~ 72000
+	cooldownTicks = 200
+	#Relâmpago: a recarga com chuva ou tempestade no lugar do bicho, em ticks (100 = 5 segundos).
+	# Default: 100
+	# Range: 0 ~ 72000
+	rainCooldownTicks = 100
+	#Relâmpago: alcance máximo da mira, em blocos.
+	# Default: 32.0
+	# Range: 4.0 ~ 96.0
+	range = 32.0
+	#Relâmpago: dano em quem está a até 1 bloco do ponto de impacto (25 = 12,5 corações).
+	# Default: 25.0
+	# Range: 0.0 ~ 1000.0
+	directDamage = 25.0
+	#Relâmpago: dano nos demais dentro do raio da área.
+	# Default: 12.0
+	# Range: 0.0 ~ 1000.0
+	areaDamage = 12.0
+	#Relâmpago: raio da área, em blocos.
+	# Default: 3.0
+	# Range: 1.0 ~ 16.0
+	areaRadius = 3.0
+	#Relâmpago: a velocidade de quem monta enquanto carrega, em relação ao normal (0.2 = 20%).
+	# Default: 0.2
+	# Range: 0.0 ~ 1.0
+	chargeSpeedMultiplier = 0.2
+	#Corrida eletrizada: o bônus máximo de velocidade correndo (0.25 = +25%).
+	# Default: 0.25
+	# Range: 0.0 ~ 5.0
+	runBonusMax = 0.25
+	#Corrida eletrizada: quanto tempo correndo até o bônus máximo, em ticks (60 = 3 segundos). Parou, volta ao normal.
+	# Default: 60
+	# Range: 5 ~ 1200
+	runRampTicks = 60
+	#Albino (RF182): multiplicador do tempo de carga do relâmpago (0.7 = 30% mais rápido).
+	# Default: 0.7
+	# Range: 0.1 ~ 1.0
+	albinoChargeMultiplier = 0.7
+	#Albino (RF182): duração do chão eletrizado após o raio, em ticks (80 = 4 segundos; 0 desliga).
+	# Default: 80
+	# Range: 0 ~ 1200
+	albinoFieldTicks = 80
+	#Albino (RF182): dano por segundo do chão eletrizado nos alvos dentro do raio da área.
+	# Default: 3.0
+	# Range: 0.0 ~ 100.0
+	albinoFieldDamage = 3.0
+
+#Triceratops SWAT (RF65): rajada de tiros (tecla de ataque montado) e transformação. Vida, dano da chifrada e velocidade são os do Triceratops.
+[swatTriceratops]
+	#Rajada: tiros por segundo enquanto a tecla está apertada (4 = um a cada 5 ticks).
+	# Default: 4.0
+	# Range: 0.5 ~ 20.0
+	shotsPerSecond = 4.0
+	#Dano de cada tiro, em pontos de vida (2 = um coração).
+	# Default: 6.0
+	# Range: 0.0 ~ 1000.0
+	damage = 6.0
+	#Alcance do tiro, em blocos (parede bloqueia; não quebra blocos).
+	# Default: 32.0
+	# Range: 4.0 ~ 128.0
+	range = 32.0
+	#Dispersão do tiro, em graus (0 = mira perfeita).
+	# Default: 2.0
+	# Range: 0.0 ~ 30.0
+	spreadDeg = 2.0
+	#Tiros no carregador (a munição é infinita: o carregador vazio recarrega sozinho).
+	# Default: 12
+	# Range: 1 ~ 500
+	magazine = 12
+	#Recarga automática com o carregador vazio, em ticks (60 = 3 segundos).
+	# Default: 60
+	# Range: 1 ~ 1200
+	reloadTicks = 60
+	#Quantos illagers (saqueador, vingador, evocador, ilusionista) mortos com a chifrada montada viram o Triceratops SWAT.
+	# Default: 10
+	# Range: 1 ~ 200
+	illagersToTransform = 10
+	#IA (sem piloto): tiros de cada rajada antes da pausa.
+	# Default: 3
+	# Range: 1 ~ 100
+	aiBurst = 3
+	#Armadura a mais que a do Triceratops (o SWAT soma este valor).
+	# Default: 4.0
+	# Range: -6.0 ~ 24.0
+	armorBonus = 4.0
+
+#Raptor Ninja (RF96): atributos em relacao ao Velociraptor, pulo, queda, energia e a shuriken (tecla de ataque montado).
+[ninjaRaptor]
+	#Vida máxima base do Raptor Ninja em relação à do Velociraptor configurado (0.9 = 10% a menos). Vale ao nascer ou carregar.
+	# Default: 0.9
+	# Range: 0.1 ~ 10.0
+	healthMultiplier = 0.9
+	#Velocidade base do Raptor Ninja em relação à do Velociraptor configurado (1.3 = 30% a mais). Vale ao nascer ou carregar.
+	# Default: 1.3
+	# Range: 0.2 ~ 4.0
+	speedMultiplier = 1.3
+	#Multiplicador do dano de queda do Raptor Ninja (0.2 = leva 20% do dano normal).
+	# Default: 0.2
+	# Range: 0.0 ~ 1.0
+	fallDamageMultiplier = 0.2
+	#Multiplicador da barra de energia do Raptor Ninja montado (1.2 = 20% a mais).
+	# Default: 1.2
+	# Range: 0.1 ~ 10.0
+	staminaMultiplier = 1.2
+	#Impulso vertical do pulo (tecla F) do Raptor Ninja. O do Velociraptor é 0.65 (~3 blocos); 0.85 dá ~4.
+	# Default: 0.85
+	# Range: 0.1 ~ 3.0
+	leapUp = 0.85
+	#Dano de cada shuriken.
+	# Default: 5.0
+	# Range: 0.0 ~ 100.0
+	shurikenDamage = 5.0
+	#Dano de cada shuriken do Raptor Ninja albino (além do veneno).
+	# Default: 3.75
+	# Range: 0.0 ~ 100.0
+	shurikenDamageAlbino = 3.75
+	#Duração do veneno da shuriken do albino, em ticks (60 = 3 segundos).
+	# Default: 60
+	# Range: 0 ~ 6000
+	poisonTicks = 60
+	#Quantas shurikens saem por disparo, em leque.
+	# Default: 3
+	# Range: 1 ~ 9
+	shurikenCount = 3
+	#Abertura entre shurikens vizinhas do leque, em graus.
+	# Default: 3.0
+	# Range: 0.0 ~ 45.0
+	spreadDegrees = 3.0
+	#Velocidade da shuriken, em blocos por tick.
+	# Default: 1.6
+	# Range: 0.2 ~ 4.0
+	shurikenSpeed = 1.6
+	#Energia gasta por disparo (só montado).
+	# Default: 15.0
+	# Range: 0.0 ~ 1000.0
+	staminaCost = 15.0
+	#Recarga entre disparos, em ticks (20 = 1 segundo). Vale também para a IA.
+	# Default: 20
+	# Range: 0 ~ 1200
+	cooldownTicks = 20
+	#Distância mínima do alvo, em blocos, para a IA (sem piloto) atirar; mais perto, morde.
+	# Default: 5.0
+	# Range: 0.0 ~ 64.0
+	aiMinRange = 5.0
+	#Distância máxima do alvo, em blocos, para a IA (sem piloto) atirar.
+	# Default: 16.0
+	# Range: 1.0 ~ 64.0
+	aiMaxRange = 16.0
+	#Quanto tempo a shuriken cravada num bloco dura, em ticks (400 = 20 segundos).
+	# Default: 400
+	# Range: 1 ~ 72000
+	stuckBlockTicks = 400
+	#Quanto tempo a shuriken cravada num ser vivo dura, em ticks (200 = 10 segundos).
+	# Default: 200
+	# Range: 1 ~ 72000
+	stuckEntityTicks = 200
+	#Máximo de shurikens cravadas no mesmo ser vivo; a mais velha some.
+	# Default: 3
+	# Range: 1 ~ 64
+	maxPerTarget = 3
+	#Máximo de shurikens por mundo; a mais velha some.
+	# Default: 32
+	# Range: 1 ~ 1024
+	maxPerLevel = 32
+
+#Raptor Sapao (RF125a): queda (os atributos sao os do Velociraptor configurado).
+[froggyRaptor]
+	#Multiplicador do dano de queda do Raptor Sapão (0.3 = leva 30% do dano normal).
+	# Default: 0.3
+	# Range: 0.0 ~ 1.0
+	fallDamageMultiplier = 0.3
+	#Alcance máximo da língua, em blocos (sem acertar nada, ela recolhe).
+	# Default: 20.0
+	# Range: 4.0 ~ 32.0
+	tongueRange = 20.0
+	#Alcance adicional da língua para o Raptor Sapão albino, em blocos.
+	# Default: 5.0
+	# Range: 0.0 ~ 32.0
+	albinoTongueBonus = 5.0
+	#Velocidade da língua voando, em blocos por tick.
+	# Default: 3.0
+	# Range: 0.5 ~ 6.0
+	tongueSpeed = 3.0
+	#Velocidade com que o Raptor Sapão é puxado até a língua grudada, em blocos por tick.
+	# Default: 1.2
+	# Range: 0.2 ~ 3.0
+	pullSpeed = 1.2
+	#Recarga da língua (tecla R e IA), em ticks (60 = 3 segundos).
+	# Default: 60
+	# Range: 0 ~ 1200
+	cooldownTicks = 60
+	#Quanto tempo a língua fica grudada puxando, em ticks, antes de soltar.
+	# Default: 40
+	# Range: 5 ~ 200
+	maxPullTicks = 40
+	#Distância mínima do alvo para a IA lançar a língua.
+	# Default: 6.0
+	# Range: 0.0 ~ 32.0
+	aiMinRange = 6.0
+	#Distância máxima do alvo para a IA lançar a língua.
+	# Default: 20.0
+	# Range: 1.0 ~ 64.0
+	aiMaxRange = 20.0
+	#Distância máxima, em blocos, para um sapo comer um ovo de Velociraptor jogado no chão.
+	# Default: 3.0
+	# Range: 1.0 ~ 8.0
+	frogEatRadius = 3.0
+	#Ticks entre o sapo comer o ovo e cuspir o Ovo de Raptor Sapão.
+	# Default: 20
+	# Range: 5 ~ 100
+	frogSpitDelayTicks = 20
+	#Recarga do sapo entre um ovo e o próximo, em ticks (100 = 5 segundos).
+	# Default: 100
+	# Range: 0 ~ 1200
+	frogCooldownTicks = 100
+
+#Veloxraptor (RF132a): atributos em relacao ao Velociraptor configurado.
+[veloxraptor]
+	#Vida máxima base do Veloxraptor em relação à do Velociraptor configurado (0.9 = 10% a menos). Vale ao nascer ou carregar.
+	# Default: 1.0
+	# Range: 0.1 ~ 10.0
+	healthMultiplier = 1.0
+	#Velocidade base do Veloxraptor em relação à do Velociraptor configurado (1.25 = 25% a mais). Vale ao nascer ou carregar.
+	# Default: 1.25
+	# Range: 0.1 ~ 10.0
+	speedMultiplier = 1.25
+	#Blocos que um Velociraptor domado e adulto precisa correr com Rapidez EM CADA dimensão (Overworld, Nether e End) para virar Veloxraptor.
+	# Default: 1000
+	# Range: 50 ~ 100000
+	runBlocksNeeded = 1000
+	#De quantos em quantos blocos o dono recebe o aviso de progresso da corrida.
+	# Default: 250
+	# Range: 50 ~ 5000
+	progressStep = 250
+	#Ticks correndo (montado) para encher UMA Arrancada (guarda até maxDashes).
+	# Default: 80
+	# Range: 10 ~ 2400
+	chargeTicks = 80
+	#Arrancadas guardadas no máximo.
+	# Default: 3
+	# Range: 1 ~ 10
+	maxDashes = 3
+	#Ticks sem correr para a carga PARCIAL (a que ainda não virou Arrancada) esvaziar.
+	# Default: 200
+	# Range: 10 ~ 4800
+	chargeDecayTicks = 200
+	#Distância da Arrancada em blocos, em linha reta.
+	# Default: 15.0
+	# Range: 1.0 ~ 64.0
+	dashDistance = 15.0
+	#Duração da Arrancada em ticks.
+	# Default: 3
+	# Range: 1 ~ 40
+	dashTicks = 3
+	#Dano da Arrancada em quem estiver no caminho (uma vez por alvo).
+	# Default: 12.0
+	# Range: 0.0 ~ 1000.0
+	dashDamage = 12.0
+	#Velocidade vertical do arremesso de quem está bem na frente da Arrancada.
+	# Default: 0.95
+	# Range: 0.0 ~ 3.0
+	dashLaunchUp = 0.95
+	#Velocidade lateral do arremesso de quem está ao lado da trajetória da Arrancada.
+	# Default: 0.75
+	# Range: 0.0 ~ 3.0
+	dashLaunchSide = 0.75
+	#Intervalo mínimo entre duas Arrancadas montado, em ticks.
+	# Default: 10
+	# Range: 0 ~ 2400
+	dashCooldownTicks = 10
+	#Recarga da Arrancada da IA (sem piloto), em ticks.
+	# Default: 80
+	# Range: 0 ~ 2400
+	aiDashCooldownTicks = 80
+	#Distância mínima do alvo para a IA dar a Arrancada.
+	# Default: 6.0
+	# Range: 1.0 ~ 64.0
+	aiDashMinRange = 6.0
+	#Distância máxima do alvo para a IA dar a Arrancada.
+	# Default: 12.0
+	# Range: 1.0 ~ 64.0
+	aiDashMaxRange = 12.0
+	#Multiplicador do alcance horizontal do pulo montado correndo.
+	# Default: 1.5
+	# Range: 1.0 ~ 5.0
+	leapForwardMultiplier = 1.5
+	#Multiplicador da barra de energia do Veloxraptor montado (1.3 = 30% a mais).
+	# Default: 1.3
+	# Range: 0.1 ~ 10.0
+	staminaMultiplier = 1.3
+	#Ticks entre duas mordidas da IA (sem piloto). O padrão dos dinossauros é 20; 13 = 50% mais rápido.
+	# Default: 13
+	# Range: 1 ~ 100
+	aiBiteIntervalTicks = 13
+	#Multiplicador da corrida da IA atrás do alvo (sobre o 1,25 dos dinossauros). Vale para Veloxraptors que nascerem ou carregarem depois.
+	# Default: 1.3
+	# Range: 0.1 ~ 5.0
+	aiRunSpeedMultiplier = 1.3
+	#Ticks segurando R para encher TODAS as Arrancadas, de 0 ao máximo.
+	# Default: 100
+	# Range: 10 ~ 1200
+	holdChargeTicks = 100
+	#Até quantos ticks segurando R ainda conta como toque (Arrancada).
+	# Default: 5
+	# Range: 1 ~ 20
+	holdTapTicks = 5
+	#Ticks parado antes de a carga (inclusive Arrancadas prontas) começar a cair.
+	# Default: 60
+	# Range: 0 ~ 2400
+	idleDecayDelayTicks = 60
+	#Ticks parado para perder UMA Arrancada inteira (600 = 30 s).
+	# Default: 600
+	# Range: 20 ~ 24000
+	idleDecayTicks = 600
+
+#Estegossauro da Flora (RF151b): abelhas da rosa, mordida da IA e golpe de cauda montado em recarga.
+[floraStegosaurus]
+	#Quantas abelhas saem da rosa a cada vez.
+	# Default: 4
+	# Range: 1 ~ 16
+	beesPerSummon = 4
+	#Máximo de abelhas vivas de um mesmo Estegossauro da Flora.
+	# Default: 6
+	# Range: 1 ~ 32
+	maxBees = 6
+	#Recarga das abelhas (tecla R e IA), em ticks (240 = 12 segundos).
+	# Default: 240
+	# Range: 0 ~ 6000
+	beeCooldownTicks = 240
+	#Quanto tempo uma abelha sem alvo fica viva, em ticks (200 = 10 s). Atacando alguém, ela não expira.
+	# Default: 200
+	# Range: 20 ~ 6000
+	beeIdleLifeTicks = 200
+	#Duração do veneno da picada, em ticks (40 = 2 s; 0 = sem veneno).
+	# Default: 40
+	# Range: 0 ~ 600
+	beePoisonTicks = 40
+	#Veneno da picada (1 = Veneno II).
+	# Default: 1
+	# Range: 0 ~ 4
+	beePoisonAmplifier = 1
+	#Abelha Solar (Flora albino): segundos de fogo no alvo picado.
+	# Default: 3.0
+	# Range: 0.0 ~ 30.0
+	solarFireSeconds = 3.0
+	#Abelha Solar: multiplicador de dano contra mortos-vivos.
+	# Default: 1.5
+	# Range: 1.0 ~ 5.0
+	solarUndeadMultiplier = 1.5
+	#Abelha Solar: multiplicador de velocidade de dia, com céu claro.
+	# Default: 1.2
+	# Range: 1.0 ~ 3.0
+	solarDaySpeedMultiplier = 1.2
+	#Alcance, em blocos, para soltar as abelhas num alvo (mira do piloto e IA).
+	# Default: 16.0
+	# Range: 4.0 ~ 48.0
+	beeRange = 16.0
+	#Alcance, em blocos, da mira do piloto para mandar as abelhas (tecla R).
+	# Default: 32.0
+	# Range: 4.0 ~ 64.0
+	aimRange = 32.0
+	#Multiplicador do dano do golpe de cauda montado quando as abelhas estão em recarga.
+	# Default: 0.6
+	# Range: 0.0 ~ 2.0
+	tailDamageMultiplier = 0.6
+	#Dano da mordida da IA (sem abelhas prontas).
+	# Default: 6.0
+	# Range: 0.0 ~ 100.0
+	biteDamage = 6.0
+	#Ticks entre uma mordida e a próxima (20 = 1 por segundo).
+	# Default: 20
+	# Range: 5 ~ 200
+	biteIntervalTicks = 20
+	#Raio, em blocos, em que as plantas crescem mais rápido perto do Estegossauro da Flora (0 = desliga).
+	# Default: 10
+	# Range: 0 ~ 32
+	growRadius = 10
+	#Tiques aleatórios extras por segundo na área (60 ≈ dobra a velocidade de crescimento no raio 10).
+	# Default: 60
+	# Range: 0 ~ 1000
+	growTicksPerSecond = 60
+
+#T-Rex Deus dos Martelos (RF161a). Vida, dano e velocidade são os do T-Rex.
+[hammerGodTRex]
+	#Armadura a mais que a do T-Rex.
+	# Default: 4.0
+	# Range: -10.0 ~ 24.0
+	armorBonus = 4.0
+	#Dano da martelada.
+	# Default: 14.0
+	# Range: 0.0 ~ 1000.0
+	swingDamage = 14.0
+	#Alcance da martelada (blocos).
+	# Default: 4.0
+	# Range: 1.0 ~ 12.0
+	swingRange = 4.0
+	#Abertura do arco da martelada (graus).
+	# Default: 120.0
+	# Range: 10.0 ~ 360.0
+	swingArcDeg = 120.0
+	#Empurrão lateral da martelada.
+	# Default: 1.2
+	# Range: 0.0 ~ 5.0
+	swingKnockback = 1.2
+	#Recarga da martelada (ticks).
+	# Default: 20
+	# Range: 0 ~ 200
+	swingCooldownTicks = 20
+	#Ticks segurando R até virar lançamento (antes disso é toque = martelada).
+	# Default: 5
+	# Range: 2 ~ 40
+	holdTicks = 5
+	#Dano do martelo arremessado.
+	# Default: 20.0
+	# Range: 0.0 ~ 1000.0
+	throwDamage = 20.0
+	#Alcance do lançamento (blocos).
+	# Default: 24.0
+	# Range: 4.0 ~ 64.0
+	throwRange = 24.0
+	#Velocidade do martelo na ida (blocos por tick).
+	# Default: 1.5
+	# Range: 0.3 ~ 4.0
+	throwSpeed = 1.5
+	#Recarga do lançamento (ticks), contada da volta do martelo.
+	# Default: 60
+	# Range: 0 ~ 1200
+	throwCooldownTicks = 60
+	#Dano do raio do martelo em tempestade (raio de 3 blocos).
+	# Default: 8.0
+	# Range: 0.0 ~ 1000.0
+	stormBoltDamage = 8.0
+	#Vida que o T-Rex ganha ao ser atingido por um raio.
+	# Default: 10.0
+	# Range: 0.0 ~ 1000.0
+	lightningHeal = 10.0
+	#Intervalo entre marteladas da IA sem piloto (ticks).
+	# Default: 30
+	# Range: 5 ~ 200
+	aiSwingIntervalTicks = 30
+	#Ticks segurando R para a mira do Salto ir do mínimo ao máximo.
+	# Default: 60
+	# Range: 5 ~ 200
+	leapChargeTicks = 60
+	#Distância do Salto do Trovão sem carga (blocos).
+	# Default: 6.0
+	# Range: 1.0 ~ 30.0
+	leapMinDistance = 6.0
+	#Distância do Salto do Trovão com carga cheia (blocos).
+	# Default: 28.0
+	# Range: 1.0 ~ 40.0
+	leapMaxDistance = 28.0
+	#Altura extra do arco do Salto acima da linha reta (blocos); soma 0,2 por bloco de distância.
+	# Default: 2.5
+	# Range: 0.5 ~ 10.0
+	leapApexHeight = 2.5
+	#Dano do impacto do Salto do Trovão.
+	# Default: 16.0
+	# Range: 0.0 ~ 200.0
+	leapDamage = 16.0
+	#Raio do impacto do Salto do Trovão (blocos).
+	# Default: 5.0
+	# Range: 1.0 ~ 16.0
+	leapRadius = 5.0
+	#Empurrão do impacto do Salto do Trovão.
+	# Default: 1.5
+	# Range: 0.0 ~ 5.0
+	leapKnockback = 1.5
+	#Recarga do Salto do Trovão (ticks), contada do pouso.
+	# Default: 240
+	# Range: 0 ~ 6000
+	leapCooldownTicks = 240
+
+#Raptor do Jazz (RF163): onda sonora (toque no R) e música (segurar R).
+[jazzRaptor]
+	#Dano da onda sonora.
+	# Default: 4.0
+	# Range: 0.0 ~ 1000.0
+	waveDamage = 4.0
+	#Alcance da onda sonora (blocos).
+	# Default: 13.0
+	# Range: 2.0 ~ 24.0
+	waveRange = 13.0
+	#Abertura TOTAL do cone da onda (graus).
+	# Default: 60.0
+	# Range: 10.0 ~ 180.0
+	waveConeDeg = 60.0
+	#Empurrão da onda sonora.
+	# Default: 2.5
+	# Range: 0.0 ~ 5.0
+	wavePush = 2.5
+	#Recarga da onda sonora (ticks).
+	# Default: 15
+	# Range: 0 ~ 200
+	waveCooldownTicks = 15
+	#Ticks segurando R até virar música (antes disso é toque = onda).
+	# Default: 10
+	# Range: 2 ~ 40
+	holdTicks = 10
+	#Duração da música (ticks). A partitura é de 100; outro valor toca em laço.
+	# Default: 100
+	# Range: 20 ~ 400
+	songTicks = 100
+	#Duração de Rapidez e Pressa dados ao fim da música (ticks).
+	# Default: 600
+	# Range: 20 ~ 6000
+	buffTicks = 600
+	#Raio do bônus da música (blocos).
+	# Default: 12.0
+	# Range: 2.0 ~ 48.0
+	buffRadius = 12.0
+	#Recarga da música, contada do fim (ticks).
+	# Default: 600
+	# Range: 0 ~ 12000
+	songCooldownTicks = 600
+	#Recarga da música quando interrompida (ticks).
+	# Default: 60
+	# Range: 0 ~ 1200
+	songCancelCooldownTicks = 60
+	#Intervalo entre ondas da IA sem piloto (ticks).
+	# Default: 40
+	# Range: 5 ~ 400
+	aiWaveIntervalTicks = 40
+
+#Estegossauro Pescador (RF164): pesca, anzol e trabalho.
+[fisherStegosaurus]
+	#Ticks da animação de lançar a linha.
+	# Default: 30
+	# Range: 5 ~ 200
+	castTicks = 30
+	#Ticks esperando a fisgada.
+	# Default: 80
+	# Range: 10 ~ 1200
+	waitTicks = 80
+	#Ticks da animação de puxar (o prêmio sai no começo).
+	# Default: 40
+	# Range: 5 ~ 200
+	reelTicks = 40
+	#Menor distância da água para pescar (blocos).
+	# Default: 2.0
+	# Range: 1.0 ~ 8.0
+	waterMin = 2.0
+	#Maior distância da água para pescar (blocos).
+	# Default: 6.0
+	# Range: 2.0 ~ 16.0
+	waterMax = 6.0
+	#Alcance do anzol em alvos mirados (blocos).
+	# Default: 16.0
+	# Range: 4.0 ~ 48.0
+	hookRange = 16.0
+	#Dano do anzol.
+	# Default: 2.0
+	# Range: 0.0 ~ 1000.0
+	hookDamage = 2.0
+	#Velocidade da puxada do anzol (blocos por tick).
+	# Default: 1.0
+	# Range: 0.2 ~ 3.0
+	hookPullSpeed = 1.0
+	#Ticks que o anzol continua puxando o alvo.
+	# Default: 12
+	# Range: 1 ~ 60
+	hookPullTicks = 12
+	#Recarga do anzol (ticks).
+	# Default: 60
+	# Range: 0 ~ 1200
+	hookCooldownTicks = 60
+	#Ticks entre pescarias no modo Trabalhar (1200 = 1 minuto).
+	# Default: 1200
+	# Range: 100 ~ 24000
+	workIntervalTicks = 1200
+	#Raio do trabalho em volta do baú com moldura (ou de onde ligou, sem baú marcado) (blocos).
+	# Default: 16
+	# Range: 2 ~ 32
+	workRadius = 16
+
+#Estegossauro Fazendeiro (RF165): rastelo e trabalho.
+[farmerStegosaurus]
+	#Ticks da animação de rastelar.
+	# Default: 40
+	# Range: 10 ~ 200
+	tillTicks = 40
+	#Tick da animação em que o rastelo pega o solo.
+	# Default: 20
+	# Range: 1 ~ 199
+	tillHitTick = 20
+	#Recarga do rastelo (ticks).
+	# Default: 40
+	# Range: 0 ~ 1200
+	tillCooldownTicks = 40
+	#Distância (blocos à frente) do centro do quadrado 3×3 rastelado.
+	# Default: 2
+	# Range: 1 ~ 4
+	tillReach = 2
+	#Vida curada por trigo dado pelo dono.
+	# Default: 4.0
+	# Range: 0.0 ~ 100.0
+	wheatHeal = 4.0
+	#Raio do trabalho em volta do baú com moldura (ou de onde ligou, sem baú marcado) (blocos).
+	# Default: 16
+	# Range: 2 ~ 32
+	workRadius = 16
+	#Ticks entre varreduras incrementais da roça.
+	# Default: 40
+	# Range: 10 ~ 400
+	workScanTicks = 40
+	#Colunas conferidas por varredura.
+	# Default: 36
+	# Range: 1 ~ 81
+	workColumnsPerScan = 36
+
+#Estegossauro Docinho (RF166): festa, vela e doces.
+[sweetStegosaurus]
+	#Ticks da animação da festa.
+	# Default: 60
+	# Range: 20 ~ 400
+	partyTicks = 60
+	#Tick da festa em que sai o confete e o efeito.
+	# Default: 10
+	# Range: 1 ~ 399
+	partyEffectTick = 10
+	#Raio da festa (blocos).
+	# Default: 8.0
+	# Range: 2.0 ~ 32.0
+	partyRadius = 8.0
+	#Duração da Regeneração I da festa (ticks).
+	# Default: 100
+	# Range: 20 ~ 2400
+	regenTicks = 100
+	#Pontos de fome que os jogadores ganham na festa.
+	# Default: 4
+	# Range: 0 ~ 20
+	foodPoints = 4
+	#Saturação que os jogadores ganham na festa.
+	# Default: 0.6
+	# Range: 0.0 ~ 2.0
+	foodSaturation = 0.6
+	#Recarga da festa (ticks).
+	# Default: 1200
+	# Range: 0 ~ 24000
+	partyCooldownTicks = 1200
+	#Menor espera entre doces (ticks).
+	# Default: 6000
+	# Range: 200 ~ 72000
+	treatMinTicks = 6000
+	#Maior espera entre doces (ticks).
+	# Default: 12000
+	# Range: 200 ~ 72000
+	treatMaxTicks = 12000
+	#Chance de o doce ser torta de abóbora (senão biscoito).
+	# Default: 0.3
+	# Range: 0.0 ~ 1.0
+	pieChance = 0.3
+	#Fração de vida do dono em que a IA faz a festa sozinha.
+	# Default: 0.5
+	# Range: 0.0 ~ 1.0
+	aiOwnerHealthFraction = 0.5
+
+#Energia dos dinossauros montados (RF88): correr e furar com a Broca gastam; parado ou andando recupera.
+[stamina]
+	#Energia máxima.
+	# Default: 100.0
+	# Range: 10.0 ~ 1000.0
+	max = 100.0
+	#Gasto por segundo correndo (Espaço + frente).
+	# Default: 10.0
+	# Range: 0.0 ~ 1000.0
+	runCost = 10.0
+	#Gasto por segundo da Broca furando.
+	# Default: 4.0
+	# Range: 0.0 ~ 1000.0
+	drillCost = 4.0
+	#Gasto por pulo (usado no RF89).
+	# Default: 10.0
+	# Range: 0.0 ~ 1000.0
+	jumpCost = 10.0
+	#Recuperação por segundo.
+	# Default: 15.0
+	# Range: 0.0 ~ 1000.0
+	regen = 15.0
+	#Ticks sem gastar antes de começar a recuperar (20 = 1 segundo).
+	# Default: 20
+	# Range: 0 ~ 200
+	regenDelayTicks = 20
+	#Esgotado: volta a correr/furar quando a energia chegar a este valor.
+	# Default: 30.0
+	# Range: 0.0 ~ 1000.0
+	recoverAt = 30.0
+	#Fôlego: menor fator sorteado ao nascer (multiplica energia máxima e recuperação).
+	# Default: 0.75
+	# Range: 0.25 ~ 2.0
+	factorMin = 0.75
+	#Fôlego: maior fator sorteado ao nascer.
+	# Default: 1.25
+	# Range: 0.25 ~ 2.0
+	factorMax = 1.25
+	#Lupa: abaixo deste fator o fôlego aparece como Ofegante.
+	# Default: 0.92
+	# Range: 0.25 ~ 2.0
+	factorWindedBelow = 0.92
+	#Lupa: acima deste fator o fôlego aparece como Incansável.
+	# Default: 1.08
+	# Range: 0.25 ~ 2.0
+	factorTirelessAbove = 1.08
+
+#Pisoteio Sísmico do Braquiossauro (RF193).
+[brachiosaurusStomp]
+	#Pisoteio (RF193): recarga do pisoteio montado, em ticks (300 = 15 s).
+	# Default: 300
+	# Range: 0 ~ 2400
+	stompCooldownTicks = 300
+	#Pisoteio (RF193): recarga do pisoteio da IA (sem piloto), em ticks (100 = 5 s).
+	# Default: 100
+	# Range: 20 ~ 1200
+	aiStompCooldownTicks = 100
+	#Pisoteio (RF193): dano em área ao redor do Braquiossauro.
+	# Default: 6.0
+	# Range: 0.0 ~ 1000.0
+	stompDamage = 6.0
+	#Pisoteio (RF193): raio da onda de choque no chão, em blocos.
+	# Default: 4.0
+	# Range: 1.0 ~ 16.0
+	stompRadius = 4.0
+	#Pisoteio (RF193): força do empurrão para fora e para cima.
+	# Default: 1.0
+	# Range: 0.0 ~ 5.0
+	stompKnockback = 1.0
+	#Pisoteio (RF193): duração da Lentidão II nas vítimas, em ticks (60 = 3 s).
+	# Default: 60
+	# Range: 0 ~ 600
+	stompSlownessTicks = 60
+
+#Raio Carregado do Braquiossauro do Laser (RF195).
+[brachiosaurusLaser]
+	#Raio (RF195): soltar o R antes deste tempo, em ticks, é o Pisoteio.
+	# Default: 8
+	# Range: 1 ~ 40
+	tapMaxTicks = 8
+	#Tanque do raio: tempo máximo de tiro, em ticks (100 = 5 s).
+	# Default: 100
+	# Range: 5 ~ 600
+	maxFireTicks = 100
+	#Tanque do raio: ticks para encher do zero.
+	# Default: 300
+	# Range: 20 ~ 2400
+	rechargeTicks = 300
+	#Tanque mínimo para ligar o raio (ticks).
+	# Default: 10
+	# Range: 0 ~ 100
+	minStartTicks = 10
+	#Raio (RF206): dano de cada pulso em cada alvo atravessado.
+	# Default: 4.0
+	# Range: 0.0 ~ 1000.0
+	damagePerHit = 4.0
+	#Raio (RF206): um pulso de dano a cada tantos ticks (4 = 5 pulsos por segundo).
+	# Default: 4
+	# Range: 1 ~ 40
+	hitIntervalTicks = 4
+	#Raio (RF206): quanto tempo a IA (sem piloto) segura o raio, em ticks (40 = 2 s).
+	# Default: 40
+	# Range: 5 ~ 600
+	aiFireTicks = 40
+	#Raio (RF195): alcance em blocos (para no primeiro bloco sólido).
+	# Default: 40.0
+	# Range: 4.0 ~ 64.0
+	range = 40.0
+	#Raio (RF195): quantos alvos o raio atravessa.
+	# Default: 3
+	# Range: 1 ~ 16
+	pierce = 3
+	#Raio (RF195): segundos de fogo nas vítimas.
+	# Default: 4.0
+	# Range: 0.0 ~ 60.0
+	fireSeconds = 4.0
+	#Raio (RF195): recarga do raio, em ticks (60 = 3 s).
+	# Default: 60
+	# Range: 0 ~ 2400
+	cooldownTicks = 60
+	#Raio (RF195): recarga do raio da IA (sem piloto), em ticks.
+	# Default: 60
+	# Range: 20 ~ 2400
+	aiCooldownTicks = 60
+	#Raio (RF195): a IA só atira de mais longe que isto, em blocos (perto: pisoteio).
+	# Default: 8.0
+	# Range: 2.0 ~ 32.0
+	aiMinDistance = 8.0
+	#Raio (RF195): fração da velocidade montada enquanto o raio está ligado.
+	# Default: 0.4
+	# Range: 0.05 ~ 1.0
+	chargeSpeedMultiplier = 0.4
+
+#Chute e Investida do Braquiossauro Espartano (RF200b, RF204, RF207).
+[brachiosaurusSpartan]
+	#Espartano (RF200b): soltar o R antes deste tempo, em ticks, é o Chute; segurando mais, é a Investida.
+	# Default: 8
+	# Range: 1 ~ 40
+	tapMaxTicks = 8
+	#Espartano (RF200b): dano do Chute.
+	# Default: 8.0
+	# Range: 0.0 ~ 100.0
+	kickDamage = 8.0
+	#Espartano (RF200b): alcance do cone do Chute, em blocos.
+	# Default: 4.0
+	# Range: 1.0 ~ 10.0
+	kickRange = 4.0
+	#Espartano (RF200b): força do empurrão do Chute.
+	# Default: 2.5
+	# Range: 0.0 ~ 6.0
+	kickKnockback = 2.5
+	#Espartano (RF200b): recarga do Chute, em ticks (100 = 5 s).
+	# Default: 80
+	# Range: 0 ~ 2400
+	kickCooldownTicks = 80
+	#Espartano (RF200b): a IA (sem piloto) chuta a esta distância, em blocos.
+	# Default: 4.5
+	# Range: 1.0 ~ 10.0
+	aiKickDistance = 4.5
+	#Espartano (RF204): velocidade da Investida, em blocos por tick.
+	# Default: 0.6
+	# Range: 0.1 ~ 2.0
+	dashSpeed = 0.6
+	#Espartano (RF207): a Investida dura enquanto segura o R, no máximo isto, em ticks (100 = 5 s).
+	# Default: 100
+	# Range: 1 ~ 200
+	dashMaxTicks = 100
+	#Espartano (RF207): dano por atropelado.
+	# Default: 24.0
+	# Range: 0.0 ~ 200.0
+	dashDamage = 24.0
+	#Espartano (RF207): empurrão da Investida.
+	# Default: 3.0
+	# Range: 0.0 ~ 6.0
+	dashKnockback = 3.0
+	#Espartano (RF207): fração do dano recebida investindo (0,6 = 40% a menos).
+	# Default: 0.6
+	# Range: 0.0 ~ 1.0
+	dashDamageTaken = 0.6
+	#Espartano (RF207): o mesmo mob só apanha de novo da Investida depois disto, em ticks (20 = 1 s).
+	# Default: 20
+	# Range: 1 ~ 200
+	dashRehitTicks = 20
+	#Espartano (RF207): duração da Investida da IA (sem piloto), em ticks (40 = 2 s).
+	# Default: 40
+	# Range: 1 ~ 200
+	aiDashTicks = 40
+	#Espartano (RF204): recarga da Investida contada do fim dela, em ticks (300 = 15 s).
+	# Default: 300
+	# Range: 0 ~ 2400
+	dashCooldownTicks = 300
+	#Espartano (RF204): distância mínima do alvo para a IA (sem piloto) investir, em blocos.
+	# Default: 6.0
+	# Range: 1.0 ~ 32.0
+	aiDashMinDistance = 6.0
+	#Espartano (RF204): distância máxima do alvo para a IA (sem piloto) investir, em blocos.
+	# Default: 14.0
+	# Range: 1.0 ~ 32.0
+	aiDashMaxDistance = 14.0
+
+#Triceratops da Percussão (RF350): Prato Refletor e Marcha da Banda.
+[percussionTriceratops]
+	#Soltar antes disto = Prato Refletor (ticks).
+	# Default: 8
+	# Range: 1 ~ 40
+	tapMaxTicks = 8
+	#Prato Refletor (RF350): raio do dano em volta (blocos).
+	# Default: 6.0
+	# Range: 1.0 ~ 12.0
+	crashRadius = 6.0
+	#Prato Refletor (RF350): dano.
+	# Default: 5.0
+	# Range: 0.0 ~ 100.0
+	crashDamage = 5.0
+	#Prato Refletor (RF350): duração da Lentidão III (20 = 1 s).
+	# Default: 40
+	# Range: 0 ~ 400
+	crashSlowTicks = 40
+	#Prato Refletor (RF350): projéteis inimigos até esta distância voltam para quem atirou (blocos).
+	# Default: 7.0
+	# Range: 1.0 ~ 16.0
+	reflectRadius = 7.0
+	#Prato Refletor: recarga (120 = 6 s).
+	# Default: 120
+	# Range: 0 ~ 2400
+	crashCooldownTicks = 120
+	#Marcha da Banda (RF350): duração máxima segurando (120 = 6 s).
+	# Default: 120
+	# Range: 20 ~ 1200
+	marchMaxTicks = 120
+	#Marcha da Banda (RF350): ticks entre batidas (10 = 120 BPM).
+	# Default: 10
+	# Range: 2 ~ 40
+	marchBeatTicks = 10
+	#Marcha da Banda (RF350): bônus de velocidade montada (0,4 = +40%).
+	# Default: 0.4
+	# Range: 0.0 ~ 3.0
+	marchSpeedBonus = 0.4
+	#Marcha da Banda (RF350): dano do pisão a cada batida.
+	# Default: 3.0
+	# Range: 0.0 ~ 100.0
+	marchStompDamage = 3.0
+	#Marcha da Banda (RF350): raio dos aliados que ganham Força I e Resistência I (blocos).
+	# Default: 10.0
+	# Range: 1.0 ~ 32.0
+	marchBuffRadius = 10.0
+	#Marcha da Banda (RF350): raio do estouro do fim (blocos).
+	# Default: 5.0
+	# Range: 1.0 ~ 16.0
+	marchEndRadius = 5.0
+	#Marcha da Banda (RF350): dano do estouro do fim.
+	# Default: 4.0
+	# Range: 0.0 ~ 100.0
+	marchEndDamage = 4.0
+	#Marcha da Banda: recarga contada do fim (600 = 30 s).
+	# Default: 600
+	# Range: 0 ~ 6000
+	marchCooldownTicks = 600
+	#Tambores de Guerra (RF350b): BUMBO a cada N batidas.
+	# Default: 4
+	# Range: 1 ~ 16
+	marchBoomEvery = 4
+	#Tambores de Guerra (RF350b): raio do BUMBO (blocos).
+	# Default: 6.0
+	# Range: 1.0 ~ 16.0
+	marchBoomRadius = 6.0
+	#Tambores de Guerra (RF350b): dano do BUMBO.
+	# Default: 6.0
+	# Range: 0.0 ~ 100.0
+	marchBoomDamage = 6.0
+	#Tambores de Guerra (RF350b): impulso para cima do BUMBO.
+	# Default: 0.7
+	# Range: 0.0 ~ 3.0
+	marchBoomLift = 0.7
+	#Tambores de Guerra (RF350b): duração da Força I e Resistência I do BUMBO (100 = 5 s).
+	# Default: 100
+	# Range: 0 ~ 1200
+	marchBuffTicks = 100
+	#Tambores de Guerra (RF350b): projéteis de frente até esta distância voltam (blocos).
+	# Default: 4.0
+	# Range: 0.0 ~ 16.0
+	marchReflectRange = 4.0
+	#Tambores de Guerra (RF350b): força do empurrão para os lados do pisão.
+	# Default: 0.9
+	# Range: 0.0 ~ 5.0
+	marchStompSide = 0.9
+
+#Caixas de Som no Palco e Show de Luzes do Braquiossauro do Rock (RF210b, RF352, RF356).
+[brachiosaurusRock]
+	#Solo (RF210b): soltar o R antes deste tempo, em ticks, são as Caixas de Som (RF356).
+	# Default: 8
+	# Range: 1 ~ 40
+	tapMaxTicks = 8
+	#Solo (RF210b): tempo máximo do Show de Luzes por vez, em ticks (120 = 6 s).
+	# Default: 120
+	# Range: 10 ~ 400
+	soloMaxTicks = 120
+	#Solo (RF210b): recarga contada do fim do Solo, em ticks (400 = 20 s).
+	# Default: 400
+	# Range: 0 ~ 4800
+	soloCooldownTicks = 400
+	#Solo (RF210b): duração do Solo da IA (sem piloto), em ticks (40 = 2 s).
+	# Default: 40
+	# Range: 10 ~ 400
+	aiSoloTicks = 40
+	#Caixas de Som (RF356): alcance da mira, em blocos.
+	# Default: 16.0
+	# Range: 4.0 ~ 32.0
+	speakerRange = 16.0
+	#Caixas de Som (RF356): tempo tocando no chão, em ticks (120 = 6 s).
+	# Default: 120
+	# Range: 40 ~ 400
+	speakerDuration = 120
+	#Caixas de Som (RF356): intervalo entre os pulsos de cada caixa, em ticks.
+	# Default: 20
+	# Range: 10 ~ 60
+	speakerPulseEvery = 20
+	#Caixas de Som (RF356): raio do pulso, em blocos.
+	# Default: 4.0
+	# Range: 2.0 ~ 8.0
+	speakerRadius = 4.0
+	#Caixas de Som (RF356): dano de cada pulso.
+	# Default: 3.0
+	# Range: 0.0 ~ 20.0
+	speakerDamage = 3.0
+	#Caixas de Som (RF356): empurrão horizontal do pulso.
+	# Default: 1.2
+	# Range: 0.0 ~ 3.0
+	speakerPush = 1.2
+	#Caixas de Som (RF356): dano do pouso (raio 2).
+	# Default: 4.0
+	# Range: 0.0 ~ 20.0
+	speakerLandDamage = 4.0
+	#Caixas de Som (RF356): recarga contada do arremesso (200 = 10 s).
+	# Default: 200
+	# Range: 40 ~ 1200
+	speakerCooldownTicks = 200
+	#Show de Luzes (RF352): intervalo entre os feixes, em ticks.
+	# Default: 10
+	# Range: 2 ~ 40
+	beamTicks = 10
+	#Show de Luzes (RF352): alcance do feixe, em blocos.
+	# Default: 14.0
+	# Range: 2.0 ~ 48.0
+	beamRange = 14.0
+	#Show de Luzes (RF352): distância máxima do alvo até o feixe, em blocos.
+	# Default: 1.5
+	# Range: 0.1 ~ 4.0
+	beamWidth = 1.5
+	#Show de Luzes (RF352): dano de cada feixe.
+	# Default: 3.0
+	# Range: 0.0 ~ 100.0
+	beamDamage = 3.0
+	#Bis (RF352): dano em quem levou feixe.
+	# Default: 5.0
+	# Range: 0.0 ~ 100.0
+	encoreDamage = 5.0
+	#Bis (RF352): velocidade para cima.
+	# Default: 1.0
+	# Range: 0.0 ~ 4.0
+	encoreLift = 1.0
+	#Bis (RF352): duração da Força I nos aliados (200 = 10 s).
+	# Default: 200
+	# Range: 0 ~ 2400
+	encoreBuffTicks = 200
+	#Bis (RF352): raio dos aliados que ganham Força, em blocos.
+	# Default: 12.0
+	# Range: 0.0 ~ 48.0
+	encoreAllyRadius = 12.0
+
+#Power Chord e Parede de Som do Estegossauro do Rock (RF211b, RF351).
+[rockStegosaurus]
+	#Power Chord/Parede (RF211b, RF351): soltar o R antes deste tempo, em ticks, é o Power Chord.
+	# Default: 8
+	# Range: 1 ~ 40
+	tapMaxTicks = 8
+	#Power Chord (RF351): comprimento da rachadura (blocos).
+	# Default: 12.0
+	# Range: 2.0 ~ 32.0
+	chordLength = 12.0
+	#Power Chord (RF351): largura da rachadura (blocos).
+	# Default: 2.5
+	# Range: 0.5 ~ 8.0
+	chordWidth = 2.5
+	#Power Chord (RF351): dano em quem esta na rachadura.
+	# Default: 6.0
+	# Range: 0.0 ~ 100.0
+	chordDamage = 6.0
+	#Power Chord (RF351): impulso para cima de quem e atingido.
+	# Default: 0.9
+	# Range: 0.0 ~ 3.0
+	chordLift = 0.9
+	#Power Chord (RF351): recarga (60 = 3 s).
+	# Default: 60
+	# Range: 0 ~ 2400
+	chordCooldownTicks = 60
+	#Parede de Som (RF351): ticks para a carga cheia (60 = 3 s).
+	# Default: 60
+	# Range: 10 ~ 400
+	wallChargeTicks = 60
+	#Parede de Som (RF351): raio da explosao com carga minima.
+	# Default: 4.0
+	# Range: 1.0 ~ 32.0
+	wallMinRadius = 4.0
+	#Parede de Som (RF351): raio da explosao com carga cheia.
+	# Default: 10.0
+	# Range: 1.0 ~ 32.0
+	wallMaxRadius = 10.0
+	#Parede de Som (RF351): dano com carga minima.
+	# Default: 4.0
+	# Range: 0.0 ~ 100.0
+	wallMinDamage = 4.0
+	#Parede de Som (RF351): dano com carga cheia.
+	# Default: 12.0
+	# Range: 0.0 ~ 100.0
+	wallMaxDamage = 12.0
+	#Parede de Som (RF351): recarga (200 = 10 s).
+	# Default: 200
+	# Range: 0 ~ 4800
+	wallCooldownTicks = 200
+	#Parede de Som (RF351): ticks de fogo em quem toca uma coluna de pirotecnia.
+	# Default: 60
+	# Range: 0 ~ 600
+	pyroTicks = 60
+
+#Bum-Tá-Bum e Pratos Voadores do Estegossauro da Percussão (RF349).
+[percussionStegosaurus]
+	#R: soltar antes deste tempo, em ticks, é o Bum-Tá-Bum.
+	# Default: 8
+	# Range: 1 ~ 40
+	tapMaxTicks = 8
+	#Bum-Tá-Bum: intervalo entre as 3 batidas (ticks).
+	# Default: 6
+	# Range: 1 ~ 40
+	beatGapTicks = 6
+	#Bum-Tá-Bum: raio da 1a batida (blocos).
+	# Default: 3.0
+	# Range: 1.0 ~ 16.0
+	beatRadius1 = 3.0
+	#Bum-Tá-Bum: raio da 2a batida (blocos).
+	# Default: 5.0
+	# Range: 1.0 ~ 16.0
+	beatRadius2 = 5.0
+	#Bum-Tá-Bum: raio da 3a batida (blocos).
+	# Default: 7.0
+	# Range: 1.0 ~ 16.0
+	beatRadius3 = 7.0
+	#Bum-Tá-Bum: dano da 1a batida.
+	# Default: 2.0
+	# Range: 0.0 ~ 100.0
+	beatDamage1 = 2.0
+	#Bum-Tá-Bum: dano da 2a batida.
+	# Default: 2.0
+	# Range: 0.0 ~ 100.0
+	beatDamage2 = 2.0
+	#Bum-Tá-Bum: dano da 3a batida.
+	# Default: 4.0
+	# Range: 0.0 ~ 100.0
+	beatDamage3 = 4.0
+	#Bum-Tá-Bum: atordoamento da 3a batida (Lentidão III + Náusea, ticks).
+	# Default: 60
+	# Range: 0 ~ 1200
+	stunTicks = 60
+	#Bum-Tá-Bum: empurrão da 3a batida.
+	# Default: 1.2
+	# Range: 0.0 ~ 6.0
+	stunKnockback = 1.2
+	#Bum-Tá-Bum: recarga contada do toque (60 = 3 s).
+	# Default: 60
+	# Range: 0 ~ 2400
+	tapCooldownTicks = 60
+	#Pratos Voadores: duração máxima segurando (ticks).
+	# Default: 80
+	# Range: 8 ~ 400
+	soloMaxTicks = 80
+	#Pratos Voadores: alcance para escolher o alvo (blocos).
+	# Default: 12.0
+	# Range: 1.0 ~ 32.0
+	discRange = 12.0
+	#Pratos Voadores: dano de cada prato.
+	# Default: 4.0
+	# Range: 0.0 ~ 100.0
+	discDamage = 4.0
+	#Pratos Voadores: velocidade do prato (blocos por tick).
+	# Default: 1.2
+	# Range: 0.1 ~ 4.0
+	discSpeed = 1.2
+	#Crash Final: raio (blocos).
+	# Default: 7.0
+	# Range: 1.0 ~ 16.0
+	finaleRadius = 7.0
+	#Crash Final: dano.
+	# Default: 8.0
+	# Range: 0.0 ~ 100.0
+	finaleDamage = 8.0
+	#Crash Final: impulso para cima.
+	# Default: 0.8
+	# Range: 0.0 ~ 4.0
+	finaleLift = 0.8
+	#Pratos Voadores: recarga contada do fim (240 = 12 s).
+	# Default: 240
+	# Range: 0 ~ 4800
+	soloCooldownTicks = 240
+
+#Estouro da Boiada e Modão do Espinossauro do Sertanejo (RF289d; RF354).
+[sertanejoSpinosaurus]
+	#Estouro/Modão: soltar o R antes deste tempo, em ticks, é o Estouro da Boiada.
+	# Default: 8
+	# Range: 1 ~ 40
+	tapMaxTicks = 8
+	#Estouro da Boiada: atraso do berrante até a boiada sair (ticks).
+	# Default: 10
+	# Range: 0 ~ 100
+	stampedeDelayTicks = 10
+	#Estouro da Boiada: distância que cada onda corre (blocos, 1 por tick).
+	# Default: 16.0
+	# Range: 1.0 ~ 48.0
+	stampedeLength = 16.0
+	#Estouro da Boiada: largura da faixa (blocos).
+	# Default: 4.0
+	# Range: 1.0 ~ 12.0
+	stampedeWidth = 4.0
+	#Estouro da Boiada: número de ondas.
+	# Default: 3
+	# Range: 1 ~ 10
+	stampedeWaves = 3
+	#Estouro da Boiada: intervalo entre as ondas (ticks).
+	# Default: 6
+	# Range: 1 ~ 40
+	stampedeWaveGapTicks = 6
+	#Estouro da Boiada: dano por onda.
+	# Default: 3.0
+	# Range: 0.0 ~ 100.0
+	stampedeDamage = 3.0
+	#Estouro da Boiada: força do empurrão para a frente.
+	# Default: 1.2
+	# Range: 0.0 ~ 6.0
+	stampedePush = 1.2
+	#Estouro da Boiada: duração da Velocidade I nos domados do dono (ticks).
+	# Default: 160
+	# Range: 0 ~ 1200
+	stampedeAllySpeedTicks = 160
+	#Estouro da Boiada: raio dos aliados que ganham Velocidade (blocos).
+	# Default: 12.0
+	# Range: 1.0 ~ 32.0
+	stampedeAllyRadius = 12.0
+	#Estouro da Boiada: recarga contada do toque (100 = 5 s).
+	# Default: 100
+	# Range: 0 ~ 2400
+	stampedeCooldownTicks = 100
+	#Modão: duração máxima segurando (ticks).
+	# Default: 100
+	# Range: 8 ~ 600
+	modaoMaxTicks = 100
+	#Modão: intervalo entre os pulsos (ticks).
+	# Default: 20
+	# Range: 2 ~ 100
+	modaoPulseTicks = 20
+	#Modão: raio (blocos).
+	# Default: 8.0
+	# Range: 1.0 ~ 24.0
+	modaoRadius = 8.0
+	#Modão: duração da Regeneração I nos aliados (ticks).
+	# Default: 60
+	# Range: 0 ~ 1200
+	modaoAllyRegenTicks = 60
+	#Modão: duração da Fraqueza I + Lentidão I nos inimigos (ticks).
+	# Default: 60
+	# Range: 0 ~ 1200
+	modaoEnemyTicks = 60
+	#Modão: recarga contada do fim (300 = 15 s).
+	# Default: 300
+	# Range: 0 ~ 4800
+	modaoCooldownTicks = 300
+
+#Golpe de Garras e vida aquática do Espinossauro (RF213).
+[spinosaurusClaw]
+	#Golpe de Garras: recarga (ticks).
+	# Default: 60
+	# Range: 0 ~ 1200
+	clawCooldownTicks = 60
+	#Golpe de Garras: dano = ataque × isto.
+	# Default: 1.3
+	# Range: 0.0 ~ 5.0
+	clawDamageMultiplier = 1.3
+	#Golpe de Garras: alcance (blocos).
+	# Default: 4.0
+	# Range: 1.0 ~ 10.0
+	clawRange = 4.0
+	#Golpe de Garras: empurrão.
+	# Default: 0.6
+	# Range: 0.0 ~ 4.0
+	clawKnockback = 0.6
+	#Atrito na água (vanilla 0,8; maior = nada mais rápido).
+	# Default: 0.96
+	# Range: 0.5 ~ 1.0
+	waterSlowDown = 0.96
+
+#Hemorragia e Corte em X do Espinossauro das Garras (RF214).
+[spinosaurusClaws]
+	#Hemorragia: acúmulos para estourar.
+	# Default: 5
+	# Range: 2 ~ 20
+	bleedStacks = 5
+	#Hemorragia: tempo sem golpe até perder os acúmulos.
+	# Default: 100
+	# Range: 20 ~ 1200
+	bleedWindowTicks = 100
+	#Hemorragia: dano do estouro (fração da vida máxima do alvo).
+	# Default: 0.12
+	# Range: 0.0 ~ 1.0
+	bleedBurstPercent = 0.12
+	#Hemorragia: teto do dano do estouro.
+	# Default: 40.0
+	# Range: 0.0 ~ 1000.0
+	bleedBurstMax = 40.0
+	#Corte em X: duração do avanço.
+	# Default: 6
+	# Range: 2 ~ 20
+	dashTicks = 6
+	#Corte em X: velocidade do avanço (blocos/tick × escala).
+	# Default: 1.1
+	# Range: 0.2 ~ 3.0
+	dashSpeed = 1.1
+	#Corte em X: dano = ataque × isto.
+	# Default: 1.5
+	# Range: 0.0 ~ 5.0
+	dashDamageMultiplier = 1.5
+	#Corte em X: recarga (160 = 8 s).
+	# Default: 160
+	# Range: 0 ~ 2400
+	dashCooldownTicks = 160
+	#Corte em X: escudo do jogador desativado (s).
+	# Default: 5.0
+	# Range: 0.0 ~ 30.0
+	shieldDisableSeconds = 5.0
+	#Golpe de garras do botão esquerdo, em ticks (RF256).
+	# Default: 20
+	# Range: 5 ~ 200
+	swipeCooldownTicks = 20
+
+#Sobrecura Abissal e Gêiser do Espinossauro dos Corais (RF215).
+[spinosaurusCoral]
+	#Sobrecura: intervalo da cura na água ou na chuva (ticks).
+	# Default: 20
+	# Range: 5 ~ 200
+	healIntervalTicks = 20
+	#Sobrecura: vida por intervalo.
+	# Default: 2.0
+	# Range: 0.0 ~ 20.0
+	healAmount = 2.0
+	#Sobrecura: raio dos aliados que ganham Absorção.
+	# Default: 8.0
+	# Range: 0.0 ~ 24.0
+	shieldRadius = 8.0
+	#Sobrecura: duração da Absorção (renovada enquanto vale).
+	# Default: 200
+	# Range: 20 ~ 1200
+	shieldTicks = 200
+	#Soltar antes disto = Golpe de Garras (ticks).
+	# Default: 8
+	# Range: 1 ~ 40
+	tapMaxTicks = 8
+	#Mordida: duracao da Lentidao nos inimigos (ticks).
+	# Default: 60
+	# Range: 0 ~ 1200
+	coldSlownessTicks = 60
+	#Mordida: nivel da Lentidao (1 = Lentidao II).
+	# Default: 1
+	# Range: 0 ~ 4
+	coldSlownessAmplifier = 1
+	#Prisão de Bolha: alcance da mira (blocos).
+	# Default: 16.0
+	# Range: 4.0 ~ 32.0
+	bubbleRange = 16.0
+	#Prisão de Bolha: recarga (240 = 12 s).
+	# Default: 240
+	# Range: 20 ~ 1200
+	bubbleCooldownTicks = 240
+	#Prisão de Bolha: duração da prisão (60 = 3 s).
+	# Default: 60
+	# Range: 10 ~ 200
+	bubbleDurationTicks = 60
+	#Prisão de Bolha: dano ao estourar.
+	# Default: 2.0
+	# Range: 0.0 ~ 50.0
+	bubbleDamage = 2.0
+	#Gêiser: alcance da mira (blocos).
+	# Default: 18.0
+	# Range: 4.0 ~ 48.0
+	geyserRange = 18.0
+	#Gêiser: recarga depois da erupção (120 = 6 s).
+	# Default: 120
+	# Range: 10 ~ 1200
+	geyserCooldownTicks = 120
+	#Gêiser: dano em cada inimigo (uma vez por erupção).
+	# Default: 8.0
+	# Range: 0.0 ~ 200.0
+	geyserDamage = 8.0
+	#Gêiser: raio da coluna (blocos).
+	# Default: 2.0
+	# Range: 0.5 ~ 6.0
+	geyserRadius = 2.0
+	#Gêiser: altura da coluna (blocos).
+	# Default: 9.0
+	# Range: 2.0 ~ 16.0
+	geyserHeight = 9.0
+	#Gêiser: velocidade de subida dentro da coluna (blocos por tick).
+	# Default: 0.6
+	# Range: 0.1 ~ 1.5
+	geyserLift = 0.6
+	#Gêiser: aviso de borbulhas antes da coluna (ticks).
+	# Default: 10
+	# Range: 0 ~ 40
+	geyserWarnTicks = 10
+	#Gêiser: duração da coluna (ticks).
+	# Default: 60
+	# Range: 5 ~ 100
+	geyserBurstTicks = 60
+
+#Deslize Cósmico e Manobra Cutback do Espinossauro Surfista (RF216).
+[spinosaurusSurfer]
+	#Deslize: anda sobre água e lava (1 = sim, 0 = não).
+	# Default: 1
+	# Range: 0 ~ 1
+	glideOnFluids = 1
+	#Cutback: raio da onda (blocos).
+	# Default: 5.0
+	# Range: 1.0 ~ 16.0
+	cutbackRadius = 5.0
+	#Cutback: dano.
+	# Default: 6.0
+	# Range: 0.0 ~ 50.0
+	cutbackDamage = 6.0
+	#Cutback: impulso para cima.
+	# Default: 0.8
+	# Range: 0.0 ~ 3.0
+	cutbackLift = 0.8
+	#Cutback: empurrão para fora.
+	# Default: 1.2
+	# Range: 0.0 ~ 6.0
+	cutbackKnockback = 1.2
+	#Cutback: recarga (200 = 10 s).
+	# Default: 200
+	# Range: 0 ~ 2400
+	cutbackCooldownTicks = 200
+	#Subir na Onda: altura máxima acima da água/lava, em blocos (0 = desliga).
+	# Default: 3.0
+	# Range: 0.0 ~ 6.0
+	waveClimbHeight = 3.0
+	#Subir na Onda: velocidade máxima de subida, blocos por tick.
+	# Default: 0.3
+	# Range: 0.05 ~ 1.0
+	waveClimbSpeed = 0.3
+	#Subir na Onda em terra firme: altura máxima acima do chão, em blocos (0 = desliga).
+	# Default: 2.0
+	# Range: 0.0 ~ 6.0
+	landClimbHeight = 2.0
+	#Raio Cósmico: dano.
+	# Default: 10.0
+	# Range: 0.0 ~ 200.0
+	boltDamage = 10.0
+	#Raio Cósmico: alcance (blocos).
+	# Default: 20.0
+	# Range: 4.0 ~ 64.0
+	boltRange = 20.0
+	#Raio Cósmico: empurrão.
+	# Default: 0.4
+	# Range: 0.0 ~ 4.0
+	boltKnockback = 0.4
+	#Raio Cósmico: recarga (20 = 1 s).
+	# Default: 20
+	# Range: 5 ~ 200
+	boltCooldownTicks = 20
+	#Multiplicador da velocidade base do Surfista (RF257; RF263: 1,8; RF445: 2,16 = +20%).
+	# Default: 2.16
+	# Range: 0.5 ~ 4.0
+	speedMultiplier = 1.8
+
+#Nado e vida aquática do Mosassauro e variantes (RF223).
+[mosasaurusSwim]
+	#Montado na água: velocidade (blocos/tick).
+	# Default: 0.42
+	# Range: 0.1 ~ 2.0
+	swimSpeed = 0.42
+	#Montado na água: Ctrl multiplica a velocidade.
+	# Default: 1.35
+	# Range: 1.0 ~ 3.0
+	turboMultiplier = 1.35
+	#Fora d'água: fração da velocidade (se arrasta).
+	# Default: 0.25
+	# Range: 0.05 ~ 1.0
+	landSpeedFactor = 0.25
+	#Fora d'água: ticks até começar a secar (1 de dano por segundo).
+	# Default: 600
+	# Range: 20 ~ 12000
+	dryTicks = 600
+
+#Poderes do Mosassauro (a mãe) (RF224).
+[mosasaurusPowers]
+	#Cruzeiro Abissal: turbo da mãe (troca o turbo comum).
+	# Default: 1.6
+	# Range: 1.0 ~ 3.0
+	cruiseSpeedMultiplier = 1.6
+	#Giro da Morte: recarga (ticks).
+	# Default: 160
+	# Range: 0 ~ 2400
+	rollCooldownTicks = 160
+	#Giro da Morte: alcance da boca (blocos × escala).
+	# Default: 3.0
+	# Range: 1.0 ~ 8.0
+	rollGrabRange = 3.0
+	#Giro da Morte: dano de cada mordida = ataque × isto.
+	# Default: 0.5
+	# Range: 0.0 ~ 5.0
+	rollDamageMultiplier = 0.5
+	#Salto Quebra-Mar: recarga (ticks).
+	# Default: 200
+	# Range: 0 ~ 2400
+	breachCooldownTicks = 200
+	#Salto Quebra-Mar: carga máxima (ticks).
+	# Default: 30
+	# Range: 5 ~ 100
+	breachMaxChargeTicks = 30
+	#Salto Quebra-Mar: impulso para cima na carga cheia.
+	# Default: 1.4
+	# Range: 0.3 ~ 3.0
+	breachLaunch = 1.4
+	#Salto Quebra-Mar: raio da onda.
+	# Default: 4.0
+	# Range: 1.0 ~ 12.0
+	breachRadius = 4.0
+	#Salto Quebra-Mar: dano da onda = ataque × isto × carga.
+	# Default: 0.8
+	# Range: 0.0 ~ 5.0
+	breachDamageMultiplier = 0.8
+
+#Mosassauro Abissal: Sombra, Manto de Escuridão e Vórtice (RF225).
+[mosasaurusAbyssal]
+	#Sombra: no fundo quando a luz do céu no bloco é ≤ isto.
+	# Default: 4
+	# Range: 0 ~ 15
+	shadeSkyLight = 4
+	#Sombra: ticks sem atacar/apanhar para os monstros não o verem.
+	# Default: 60
+	# Range: 0 ~ 600
+	camoQuietTicks = 60
+	#Manto: recarga (ticks).
+	# Default: 240
+	# Range: 0 ~ 2400
+	shroudCooldownTicks = 240
+	#Manto: raio da nuvem.
+	# Default: 6.0
+	# Range: 1.0 ~ 16.0
+	shroudRadius = 6.0
+	#Manto: Escuridão nos inimigos (ticks).
+	# Default: 120
+	# Range: 0 ~ 600
+	shroudDarknessTicks = 120
+	#Manto: Cegueira nos inimigos (ticks).
+	# Default: 60
+	# Range: 0 ~ 600
+	shroudBlindTicks = 60
+	#Manto: ele quase invisível (ticks).
+	# Default: 100
+	# Range: 0 ~ 600
+	shroudInvisTicks = 100
+	#Vórtice: recarga (ticks).
+	# Default: 240
+	# Range: 0 ~ 2400
+	vortexCooldownTicks = 240
+	#Vórtice: sucção máxima segurando (ticks).
+	# Default: 60
+	# Range: 10 ~ 200
+	vortexMaxTicks = 60
+	#Vórtice: alcance (cone de 60° à frente).
+	# Default: 10.0
+	# Range: 2.0 ~ 24.0
+	vortexRange = 10.0
+	#Vórtice: força do puxão (blocos/tick).
+	# Default: 0.22
+	# Range: 0.0 ~ 1.0
+	vortexPull = 0.22
+	#Vórtice: dano do bote = ataque × isto.
+	# Default: 2.0
+	# Range: 0.0 ~ 10.0
+	vortexBiteMultiplier = 2.0
+	#Vórtice: raio do bote em volta da boca.
+	# Default: 3.0
+	# Range: 1.0 ~ 8.0
+	vortexBiteRadius = 3.0
+
+#Mosassauro Pirata: Saque, Cuspe de Moeda e Risada do Capitão (RF226).
+[mosasaurusPirate]
+	#Moeda: recarga (ticks).
+	# Default: 30
+	# Range: 0 ~ 600
+	coinCooldownTicks = 30
+	#Moeda: velocidade (blocos/tick).
+	# Default: 2.0
+	# Range: 0.5 ~ 5.0
+	coinSpeed = 2.0
+	#Moeda: dano = ataque × isto.
+	# Default: 0.6
+	# Range: 0.0 ~ 5.0
+	coinDamageMultiplier = 0.6
+	#Moeda: alcance do ricochete (0 = sem ricochete).
+	# Default: 6.0
+	# Range: 0.0 ~ 16.0
+	coinRicochetRange = 6.0
+	#Moeda: dano do ricochete (fração do primeiro).
+	# Default: 0.5
+	# Range: 0.0 ~ 2.0
+	coinRicochetDamage = 0.5
+	#Moeda: chance de cair uma pepita de ouro no acerto.
+	# Default: 0.2
+	# Range: 0.0 ~ 1.0
+	coinNuggetChance = 0.2
+	#Tripulação: recarga da Risada (ticks).
+	# Default: 600
+	# Range: 0 ~ 6000
+	crewCooldownTicks = 600
+	#Tripulação: segurar R por quantos ticks.
+	# Default: 20
+	# Range: 1 ~ 100
+	crewHoldTicks = 20
+	#Tripulação: afogados por Risada.
+	# Default: 3
+	# Range: 1 ~ 8
+	crewPerSummon = 3
+	#Tripulação: máximo ao mesmo tempo.
+	# Default: 5
+	# Range: 1 ~ 12
+	maxCrew = 5
+	#Tripulação: vida sem alvo (lutando não acaba).
+	# Default: 200
+	# Range: 20 ~ 6000
+	crewIdleLifeTicks = 200
+	#Mira do piloto (blocos).
+	# Default: 32.0
+	# Range: 4.0 ~ 64.0
+	aimRange = 32.0
+	#Saque: chance de dobrar cada pilha que o mob solta.
+	# Default: 0.5
+	# Range: 0.0 ~ 1.0
+	lootExtraChance = 0.5
+	#Saque: chance de 1–3 pepitas de ouro extras.
+	# Default: 0.25
+	# Range: 0.0 ~ 1.0
+	lootNuggetChance = 0.25
+
+#Mosassauro Submarino: Torpedos e Pulso de Sonar (RF227).
+[mosasaurusSubmarine]
+	#Torpedos: recarga (ticks).
+	# Default: 80
+	# Range: 0 ~ 1200
+	torpedoCooldownTicks = 80
+	#Torpedos: velocidade na água (blocos/tick).
+	# Default: 1.1
+	# Range: 0.2 ~ 4.0
+	torpedoSpeedWater = 1.1
+	#Torpedos: velocidade fora d'água (blocos/tick).
+	# Default: 0.9
+	# Range: 0.2 ~ 4.0
+	torpedoSpeedAir = 0.9
+	#Torpedos: curva máxima por tick (graus, teleguiado).
+	# Default: 7.0
+	# Range: 0.0 ~ 45.0
+	torpedoTurnDegrees = 7.0
+	#Torpedos: tempo de vida (ticks).
+	# Default: 100
+	# Range: 10 ~ 600
+	torpedoLifeTicks = 100
+	#Torpedos: dano no centro = ataque × isto.
+	# Default: 1.2
+	# Range: 0.0 ~ 10.0
+	torpedoDamageMultiplier = 1.2
+	#Torpedos: raio da explosão (blocos).
+	# Default: 3.0
+	# Range: 0.5 ~ 8.0
+	torpedoRadius = 3.0
+	#Torpedos: a explosão quebra blocos (0 = não, 1 = sim).
+	# Default: 0
+	# Range: 0 ~ 1
+	torpedoBreaksBlocks = 0
+	#Mira do piloto (blocos).
+	# Default: 32.0
+	# Range: 4.0 ~ 64.0
+	aimRange = 32.0
+	#Sonar: recarga (ticks).
+	# Default: 400
+	# Range: 0 ~ 6000
+	sonarCooldownTicks = 400
+	#Sonar: segurar R por quantos ticks.
+	# Default: 15
+	# Range: 1 ~ 100
+	sonarHoldTicks = 15
+	#Sonar: raio do pulso (blocos).
+	# Default: 48.0
+	# Range: 8.0 ~ 128.0
+	sonarRadius = 48.0
+	#Sonar: Brilho nos mobs achados (ticks).
+	# Default: 200
+	# Range: 0 ~ 2400
+	sonarGlowTicks = 200
+
+#Mosassauro Vulcânico: Navegador de Magma, Bomba Piroclástica e Ebulição Oceânica (RF229).
+[mosasaurusMagma]
+	#Lava: velocidade montado (fração da água).
+	# Default: 0.85
+	# Range: 0.1 ~ 2.0
+	lavaSwimSpeedMultiplier = 0.85
+	#Bomba: recarga (ticks).
+	# Default: 60
+	# Range: 0 ~ 1200
+	bombCooldownTicks = 60
+	#Bomba: velocidade de saída.
+	# Default: 1.3
+	# Range: 0.3 ~ 4.0
+	bombSpeed = 1.3
+	#Bomba: dano no centro = ataque × isto.
+	# Default: 1.0
+	# Range: 0.0 ~ 10.0
+	bombDamageMultiplier = 1.0
+	#Bomba: raio.
+	# Default: 3.0
+	# Range: 0.5 ~ 8.0
+	bombRadius = 3.0
+	#Bomba: fogo nos atingidos, fora d'água (ticks).
+	# Default: 100
+	# Range: 0 ~ 600
+	bombFireTicks = 100
+	#Bomba: põe fogo nos blocos (1 = sim, 0 = não; respeita mobGriefing).
+	# Default: 0
+	# Range: 0 ~ 1
+	bombPlacesFire = 0
+	#Ebulição: recarga (ticks).
+	# Default: 280
+	# Range: 0 ~ 2400
+	boilCooldownTicks = 280
+	#Ebulição: duração máxima segurando (ticks).
+	# Default: 60
+	# Range: 10 ~ 200
+	boilMaxTicks = 60
+	#Ebulição: raio.
+	# Default: 6.0
+	# Range: 1.0 ~ 16.0
+	boilRadius = 6.0
+	#Ebulição: dano por pulso = ataque × isto.
+	# Default: 0.25
+	# Range: 0.0 ~ 5.0
+	boilDamageMultiplier = 0.25
+	#Ebulição: ticks entre pulsos.
+	# Default: 10
+	# Range: 2 ~ 40
+	boilEvery = 10
+	#Torpedo: recarga (ticks).
+	# Default: 200
+	# Range: 0 ~ 1200
+	torpedoCooldownTicks = 200
+	#Torpedo: preparação parado (ticks).
+	# Default: 6
+	# Range: 0 ~ 20
+	torpedoWindupTicks = 6
+	#Torpedo: duração da investida (ticks).
+	# Default: 32
+	# Range: 5 ~ 60
+	torpedoTicks = 32
+	#Torpedo: velocidade (blocos/tick).
+	# Default: 1.4
+	# Range: 0.3 ~ 3.0
+	torpedoSpeed = 1.4
+	#Torpedo: dano por acerto.
+	# Default: 10.0
+	# Range: 0.0 ~ 50.0
+	torpedoDamage = 10.0
+	#Torpedo: fogo nos atingidos fora d'água (ticks).
+	# Default: 100
+	# Range: 0 ~ 600
+	torpedoFireTicks = 100
+	#Torpedo: Lentidão II nos atingidos dentro d'água (ticks).
+	# Default: 60
+	# Range: 0 ~ 200
+	torpedoWaterSlowTicks = 60
+
+#Quetzalcoatlus (RF313a).
+[quetzalcoatlus]
+	#Vida máxima base (antes da variação de tamanho).
+	# Default: 60.0
+	# Range: 1.0 ~ 1024.0
+	maxHealth = 60.0
+	#Dano de ataque base (antes da variação de tamanho).
+	# Default: 7.0
+	# Range: 0.0 ~ 100.0
+	attackDamage = 7.0
+	#Velocidade de movimento base (antes da variação de velocidade). Para comparar: o jogador anda a 0.1.
+	# Default: 0.26
+	# Range: 0.05 ~ 2.0
+	movementSpeed = 0.26
+
+#Voo montado do Quetzalcoatlus (RF313b).
+[quetzalcoatlusFlight]
+	#W no ar: empuxo de cada tick batendo as asas (blocos/tick).
+	# Default: 0.05
+	# Range: 0.0 ~ 0.5
+	flapThrust = 0.05
+	#Estamina gasta por segundo batendo as asas ou subindo.
+	# Default: 8.0
+	# Range: 0.0 ~ 100.0
+	flapStaminaPerSecond = 8.0
+	#Velocidade máxima no ar (blocos/tick).
+	# Default: 2.0
+	# Range: 0.2 ~ 5.0
+	maxSpeed = 2.0
+	#Decolagem: impulso para cima.
+	# Default: 0.75
+	# Range: 0.1 ~ 3.0
+	takeoffImpulse = 0.75
+	#Decolagem: estamina mínima (fração do máximo).
+	# Default: 0.2
+	# Range: 0.0 ~ 1.0
+	takeoffMinStamina = 0.2
+	#Gravidade no voo (1 = a do Élitro).
+	# Default: 1.0
+	# Range: 0.1 ~ 3.0
+	gravityFactor = 1.0
+	#Shift no ar: quanto desce por tick.
+	# Default: 0.08
+	# Range: 0.0 ~ 0.5
+	diveDescend = 0.08
+	#Velocidade de cruzeiro sem bater as asas (blocos/tick).
+	# Default: 0.55
+	# Range: 0.0 ~ 2.0
+	cruiseSpeed = 0.55
+	#W só acelera até esta velocidade; mergulho passa (blocos/tick).
+	# Default: 1.3
+	# Range: 0.2 ~ 5.0
+	flapMaxSpeed = 1.3
+	#Curva máxima no ar (graus por tick).
+	# Default: 6.0
+	# Range: 1.0 ~ 30.0
+	turnRate = 6.0
+
+#Habilidades do Quetzalcoatlus (RF313c): Mergulho em Picada, Rajada e Raspar.
+[quetzalcoatlusPowers]
+	#Mergulho em Picada: recarga (ticks).
+	# Default: 120
+	# Range: 0 ~ 2400
+	diveCooldownTicks = 120
+	#Mergulho em Picada: alcance da mira (blocos).
+	# Default: 24.0
+	# Range: 4.0 ~ 64.0
+	diveRange = 24.0
+	#Mergulho em Picada: dano.
+	# Default: 18.0
+	# Range: 0.0 ~ 200.0
+	diveDamage = 18.0
+	#Rajada: recarga (ticks).
+	# Default: 160
+	# Range: 0 ~ 2400
+	gustCooldownTicks = 160
+	#Rajada: raio (blocos).
+	# Default: 6.0
+	# Range: 1.0 ~ 24.0
+	gustRadius = 6.0
+	#Rajada: dano de cada batida.
+	# Default: 2.0
+	# Range: 0.0 ~ 100.0
+	gustDamage = 2.0
+	#Raspar: ticks por peixe pescado.
+	# Default: 60
+	# Range: 5 ~ 1200
+	skimFishTicks = 60
+	#Ticks segurando o R para contar como segurar (Raspar).
+	# Default: 6
+	# Range: 2 ~ 40
+	holdTicks = 6
+
+#Turbo do Quetzalcoatlus Jato (RF319b): toque no R no ar.
+[jetQuetzalcoatlusPowers]
+	#Duração do Turbo (ticks).
+	# Default: 30
+	# Range: 1 ~ 400
+	turboTicks = 30
+	#Velocidade do Turbo (blocos/tick).
+	# Default: 2.4
+	# Range: 0.2 ~ 6.0
+	turboSpeed = 2.4
+	#Recarga do Turbo (ticks).
+	# Default: 200
+	# Range: 0 ~ 2400
+	turboCooldownTicks = 200
+	#Dano do atropelamento.
+	# Default: 8.0
+	# Range: 0.0 ~ 200.0
+	turboDamage = 8.0
+	#Empurrão do atropelamento.
+	# Default: 1.2
+	# Range: 0.0 ~ 10.0
+	turboKnockback = 1.2
+	#Recarga da Decolagem Vertical (ticks).
+	# Default: 200
+	# Range: 0 ~ 2400
+	vtolCooldownTicks = 200
+	#Raio da explosão da Decolagem Vertical (blocos).
+	# Default: 5.0
+	# Range: 0.0 ~ 32.0
+	vtolRadius = 5.0
+	#Dano da explosão da Decolagem Vertical.
+	# Default: 6.0
+	# Range: 0.0 ~ 200.0
+	vtolDamage = 6.0
+	#Fogo da explosão da Decolagem Vertical (segundos).
+	# Default: 4
+	# Range: 0 ~ 60
+	vtolFireSeconds = 4
+	#Quantos ticks a Decolagem Vertical sobe.
+	# Default: 14
+	# Range: 1 ~ 100
+	vtolLiftTicks = 14
+	#Velocidade vertical alvo da Decolagem Vertical (blocos/tick).
+	# Default: 0.75
+	# Range: 0.05 ~ 3.0
+	vtolLiftSpeed = 0.75
+
+#Investida de Fogo (R no ar) e Anel Solar (R no chão) do Quezo Fênix (RF323b).
+[phoenixQuetzalcoatlusPowers]
+	#Duração da Investida de Fogo (ticks).
+	# Default: 20
+	# Range: 1 ~ 400
+	dashTicks = 20
+	#Preparação da Investida de Fogo antes de disparar (ticks).
+	# Default: 6
+	# Range: 0 ~ 40
+	dashWindupTicks = 6
+	#Velocidade da Investida de Fogo (blocos/tick).
+	# Default: 2.0
+	# Range: 0.2 ~ 6.0
+	dashSpeed = 2.0
+	#Recarga da Investida de Fogo (ticks).
+	# Default: 160
+	# Range: 0 ~ 2400
+	dashCooldownTicks = 160
+	#Dano da Investida de Fogo.
+	# Default: 10.0
+	# Range: 0.0 ~ 200.0
+	dashDamage = 10.0
+	#Fogo da Investida de Fogo (segundos).
+	# Default: 5
+	# Range: 0 ~ 60
+	dashFireSeconds = 5
+	#Quantos ticks o Anel Solar leva para abrir.
+	# Default: 10
+	# Range: 1 ~ 100
+	ringTicks = 10
+	#Raio final do Anel Solar (blocos).
+	# Default: 7.0
+	# Range: 1.0 ~ 32.0
+	ringRadius = 7.0
+	#Dano do Anel Solar.
+	# Default: 6.0
+	# Range: 0.0 ~ 200.0
+	ringDamage = 6.0
+	#Fogo do Anel Solar (segundos).
+	# Default: 4
+	# Range: 0 ~ 60
+	ringFireSeconds = 4
+	#Empurrão para fora do Anel Solar.
+	# Default: 1.0
+	# Range: 0.0 ~ 10.0
+	ringKnockback = 1.0
+	#Recarga do Anel Solar (ticks).
+	# Default: 160
+	# Range: 0 ~ 2400
+	ringCooldownTicks = 160
+
+#Fanfarra, Solo de Jazz e Nota Aguda do Quetzalcoatlus do Jazz (RF320b): R montado.
+[jazzQuetzalcoatlusPowers]
+	#Alcance da Fanfarra (blocos).
+	# Default: 10.0
+	# Range: 1.0 ~ 64.0
+	fanfareRange = 10.0
+	#Abertura total do cone da Fanfarra (graus).
+	# Default: 50.0
+	# Range: 1.0 ~ 180.0
+	fanfareAngle = 50.0
+	#Dano da Fanfarra.
+	# Default: 4.0
+	# Range: 0.0 ~ 200.0
+	fanfareDamage = 4.0
+	#Empurrão da Fanfarra.
+	# Default: 1.2
+	# Range: 0.0 ~ 10.0
+	fanfareKnockback = 1.2
+	#Lentidão II da Fanfarra (ticks).
+	# Default: 60
+	# Range: 0 ~ 2400
+	fanfareSlowTicks = 60
+	#Recarga da Fanfarra (ticks).
+	# Default: 160
+	# Range: 0 ~ 2400
+	fanfareCooldownTicks = 160
+	#Duração máxima do Solo de Jazz (ticks).
+	# Default: 100
+	# Range: 1 ~ 2400
+	soloMaxTicks = 100
+	#Raio do Solo de Jazz (blocos).
+	# Default: 8.0
+	# Range: 1.0 ~ 64.0
+	soloRadius = 8.0
+	#Velocidade I + Força I do Solo (ticks).
+	# Default: 400
+	# Range: 0 ~ 24000
+	soloBuffTicks = 400
+	#Recarga do Solo de Jazz (ticks).
+	# Default: 600
+	# Range: 0 ~ 24000
+	soloCooldownTicks = 600
+	#Alcance da Nota Aguda (blocos).
+	# Default: 56.0
+	# Range: 1.0 ~ 128.0
+	noteRange = 56.0
+	#Dano da Nota Aguda.
+	# Default: 10.0
+	# Range: 0.0 ~ 200.0
+	noteDamage = 10.0
+	#Empurrão da Nota Aguda.
+	# Default: 0.8
+	# Range: 0.0 ~ 10.0
+	noteKnockback = 0.8
+	#Recarga da Nota Aguda (ticks).
+	# Default: 60
+	# Range: 0 ~ 2400
+	noteCooldownTicks = 60
+	#Cone da mira automática da Nota Aguda (graus).
+	# Default: 15.0
+	# Range: 0.0 ~ 90.0
+	noteAimAngle = 15.0
+
+#Chifrada do botão esquerdo dos Triceratops: bônus pela velocidade (RF243).
+[triceratopsGore]
+	#Velocidade (blocos/tick) em que o bônus chega ao máximo.
+	# Default: 0.35
+	# Range: 0.05 ~ 2.0
+	speedForMax = 0.35
+	#Dano extra na velocidade máxima (1,0 = dobra).
+	# Default: 1.0
+	# Range: 0.0 ~ 5.0
+	damageBonus = 1.0
+	#Repulsão extra na velocidade máxima (1,5 = 2,5×).
+	# Default: 1.5
+	# Range: 0.0 ~ 5.0
+	knockbackBonus = 1.5
+
+#T-Rex Fogo-Gelado (RF302a). Vida, dano e velocidade são os do T-Rex.
+[bicephalousTRex]
+	#Armadura a mais que a do T-Rex.
+	# Default: 2.0
+	# Range: -10.0 ~ 24.0
+	armorBonus = 2.0
+	#Raio, em blocos, da lava/água que vira obsidiana/gelo sob os pés.
+	# Default: 3
+	# Range: 1 ~ 8
+	walkRadius = 3
+	#1 = Pés de Obsidiana ligado.
+	# Default: 1
+	# Range: 0 ~ 1
+	walkEnabled = 1
+	#Segundos de fogo da mordida de fogo e do Choque Térmico.
+	# Default: 4.0
+	# Range: 0.0 ~ 60.0
+	fireBiteIgniteSeconds = 4.0
+	#Ticks acima do limite de congelar: cerca de metade disso em ticks fica congelado.
+	# Default: 160
+	# Range: 0 ~ 1200
+	iceBiteFrozenTicks = 160
+	#Duração da Lentidão da mordida de gelo, em ticks.
+	# Default: 80
+	# Range: 0 ~ 1200
+	iceBiteSlownessTicks = 80
+	#Nível da Lentidão da mordida de gelo (1 = Lentidão II).
+	# Default: 1
+	# Range: 0 ~ 4
+	iceBiteSlownessLevel = 1
+	#Dano do Choque Térmico.
+	# Default: 16.0
+	# Range: 0.0 ~ 1000.0
+	shockDamage = 16.0
+	#Multiplicador do dano do Choque Térmico em alvo congelado.
+	# Default: 2.0
+	# Range: 1.0 ~ 10.0
+	shockFrozenMultiplier = 2.0
+	#Alcance do Choque Térmico, em blocos (soma a largura do dino).
+	# Default: 4.5
+	# Range: 1.0 ~ 12.0
+	shockReach = 4.5
+	#Recarga do Choque Térmico, em ticks.
+	# Default: 80
+	# Range: 0 ~ 1200
+	shockCooldownTicks = 80
+	#Ticks segurando o R para virar segurar (e não toque).
+	# Default: 6
+	# Range: 2 ~ 40
+	holdTicks = 6
+	#Chance de a IA usar o choque quando o alvo está congelado e perto.
+	# Default: 1.0
+	# Range: 0.0 ~ 1.0
+	aiShockChance = 1.0
+	#Ticks de sopro contínuo que uma barra cheia aguenta.
+	# Default: 80
+	# Range: 10 ~ 400
+	breathFuelTicks = 80
+	#Ticks para encher uma barra do vazio ao cheio; a de fogo não enche na água nem na chuva.
+	# Default: 120
+	# Range: 10 ~ 2400
+	breathRechargeTicks = 120
+	#Fração de cada barra gasta pelo Choque Térmico.
+	# Default: 0.25
+	# Range: 0.0 ~ 1.0
+	shockFuelCost = 0.25
+	#Intervalo mínimo entre trocas de cabeça.
+	# Default: 10
+	# Range: 0 ~ 100
+	breathSwapTicks = 10
+	#Alcance de cada jato, em blocos.
+	# Default: 8.0
+	# Range: 3.0 ~ 16.0
+	breathRange = 8.0
+	#Meia largura do jato, em blocos.
+	# Default: 1.0
+	# Range: 0.3 ~ 3.0
+	breathWidth = 1.0
+	#O mesmo alvo leva dano no máximo 1 vez por intervalo, por jato.
+	# Default: 10
+	# Range: 2 ~ 40
+	breathHitIntervalTicks = 10
+	#Dano do jato de fogo por acerto.
+	# Default: 3.0
+	# Range: 0.0 ~ 1000.0
+	breathFireDamage = 3.0
+	#Segundos de fogo do jato de fogo.
+	# Default: 4.0
+	# Range: 0.0 ~ 60.0
+	breathFireIgniteSeconds = 4.0
+	#Dano do jato de gelo por acerto.
+	# Default: 3.0
+	# Range: 0.0 ~ 1000.0
+	breathIceDamage = 3.0
+	#Ticks de congelamento somados por acerto do jato de gelo (teto: limite de congelar mais iceBiteFrozenTicks).
+	# Default: 40
+	# Range: 0 ~ 1200
+	breathIceFreezeTicks = 40
+	#Distância mínima do alvo, em blocos, para a IA soprar.
+	# Default: 3.0
+	# Range: 0.0 ~ 32.0
+	aiBreathMin = 3.0
+	#Distância máxima do alvo, em blocos, para a IA soprar.
+	# Default: 9.0
+	# Range: 1.0 ~ 32.0
+	aiBreathMax = 9.0
+
+#Montaria: opções gerais (RF245).
+[ride]
+	#Dinossauros montados pulam com o Espaço (1 = sim, 0 = não). Os raptores têm salto próprio e não entram aqui.
+	# Default: 0
+	# Range: 0 ~ 1
+	allowJump = 0
+
+#Compactador de Dinossauros (RF329): encolhe dinossauros domados do dono, guarda dentro da máquina e solta de volta. Vale na hora.
+[compactor]
+	#Quantos dinossauros cabem guardados no Compactador.
+	# Default: 64
+	# Range: 1 ~ 128
+	capacity = 64
+	#Quantos dinossauros o laser compacta de uma vez (por ciclo).
+	# Default: 3
+	# Range: 1 ~ 8
+	maxPerCycle = 3
+	#Altura, em blocos, a que o laser encolhe todos os dinossauros (±10% por bicho).
+	# Default: 0.4
+	# Range: 0.1 ~ 1.0
+	targetHeight = 0.4
+	#Duração, em ticks, de encolher (e de crescer ao sair). 40 = 2 segundos.
+	# Default: 40
+	# Range: 10 ~ 400
+	shrinkTicks = 40
+	#Tempo máximo, em ticks, para o dinossauro pequeno chegar ao arco; passou disso, entra mesmo assim.
+	# Default: 160
+	# Range: 20 ~ 1200
+	marchTimeoutTicks = 160
+	#Ticks do mundo por 1 carga de manutenção (só gasta com dinossauro guardado). 24000 = 1 dia.
+	# Default: 24000
+	# Range: 1200 ~ 240000
+	upkeepTicks = 24000
+	#Cargas que 1 pó de redstone põe no tanque.
+	# Default: 4
+	# Range: 1 ~ 64
+	chargesPerRedstone = 4
+	#Capacidade do tanque de cargas.
+	# Default: 32
+	# Range: 4 ~ 256
+	tankMax = 32
+	#Ticks que o dino leva para entrar/sair andando pelo arco.
+	# Default: 20
+	# Range: 5 ~ 100
+	enterTicks = 20
+	#Ticks que a porta espera aberta depois do último dino passar.
+	# Default: 30
+	# Range: 0 ~ 200
+	doorCloseDelayTicks = 30
+
+#Cérebro de combate da IA (RF341a): escolhe entre usar a habilidade, esperar a recarga na faixa, morder ou recuar.
+[combatAi]
+	#Ticks entre decisões (cada dino com sua defasagem).
+	# Default: 10
+	# Range: 1 ~ 100
+	decisionInterval = 10
+	#Tempo mínimo numa postura antes de trocar (anti-vaivém; usar a habilidade, vida baixa e alvo novo trocam na hora).
+	# Default: 30
+	# Range: 0 ~ 400
+	stanceMinTicks = 30
+	#Blocos por tick por unidade de velocidade (jogador 0,1 = 4,32 blocos/s).
+	# Default: 2.16
+	# Range: 0.1 ~ 10.0
+	blocksPerSpeedUnit = 2.16
+	#Abaixo desta fração da vida, quem recua ferido fica longe e só morde encurralado.
+	# Default: 0.35
+	# Range: 0.0 ~ 1.0
+	lowHealthFraction = 0.35
+	#Vai morder para acabar com o alvo se a vida dele for até isto × o dano da mordida.
+	# Default: 2.0
+	# Range: 0.0 ~ 20.0
+	finishMultiplier = 2.0
+	#Selvagens: multiplicador da recarga das habilidades da IA (domados = 1).
+	# Default: 2.0
+	# Range: 1.0 ~ 20.0
+	wildCooldownMultiplier = 2.0
+	#Abaixo desta fração da energia só corre para recuar.
+	# Default: 0.25
+	# Range: 0.0 ~ 1.0
+	runMinStaminaFraction = 0.25
+	#Velocidade andando na faixa de espera.
+	# Default: 0.8
+	# Range: 0.1 ~ 2.0
+	holdWalkSpeed = 0.8
+	#1 = escreve no log cada troca de postura ([CombatAi]); 0 = desligado.
+	# Default: 0
+	# Range: 0 ~ 1
+	debugLog = 0
+	#Seguir: velocidade no passo (perto do dono).
+	# Default: 1.1
+	# Range: 0.5 ~ 3.0
+	followWalkSpeed = 1.1
+	#Seguir: velocidade correndo atrás do dono (não gasta energia).
+	# Default: 1.6
+	# Range: 0.5 ~ 3.0
+	followRunSpeed = 1.6
+	#Seguir: corre se o dono estiver a mais que isto (volta ao passo 2 blocos antes).
+	# Default: 8.0
+	# Range: 2.0 ~ 32.0
+	followRunDistance = 8.0
+	#Seguir: a mais que isto fica para trás e passa a pastar/patrulhar ali.
+	# Default: 40.0
+	# Range: 16.0 ~ 128.0
+	followLoseDistance = 40.0
+	#Seguir: ticks longe sem conseguir se aproximar até ficar para trás.
+	# Default: 100
+	# Range: 20 ~ 1200
+	followStuckTicks = 100
+	#Seguir: velocidade mínima da corrida em blocos/s (0 = desliga).
+	# Default: 7.5
+	# Range: 0.0 ~ 20.0
+	followMinRunBlocks = 7.5
+	#Seguir: blocos que o dino precisa andar em followStuckTicks para não contar como travado.
+	# Default: 4.0
+	# Range: 1.0 ~ 16.0
+	followStuckMinMove = 4.0
+	#Seguir: multiplicador de nós da busca de caminho quando o caminho sai parcial.
+	# Default: 3.0
+	# Range: 1.0 ~ 8.0
+	followPartialNodesMultiplier = 3.0
+	#Mordida da IA: blocos de alcance a mais por bloco de largura acima de 1 (0 = alcance do jogo).
+	# Default: 1.0
+	# Range: 0.0 ~ 3.0
+	meleeReachPerWidth = 1.0
+
+#Orbe do T-Rex Eclipse (RF22): segurar a tecla de ataque montado carrega, soltar dispara. Dano, raio e empurrão crescem com a carga (linear entre o mínimo, carga mínima, e o máximo, carga cheia). Não quebra blocos, não põe fogo e não atinge o piloto, o dono nem os domados do dono. Vale na hora, também para o ícone de quem joga no servidor.
+[eclipseOrb]
+	#Tempo para a carga encher, em ticks (20 ticks = 1 segundo). 60 = 3 segundos. Depois disso fica carregado até soltar a tecla.
+	# Default: 60
+	# Range: 10 ~ 400
+	chargeTicks = 60
+	#Recarga depois de cada disparo, em ticks. 40 = 2 segundos. Com 0, pode carregar de novo na hora.
+	# Default: 40
+	# Range: 0 ~ 1200
+	cooldownTicks = 40
+	#Dano com a carga mínima (em pontos de vida; 2 = 1 coração). 6 = 3 corações. É o dano de quem está no centro da explosão; nas bordas cai até a metade.
+	# Default: 6.0
+	# Range: 0.0 ~ 100.0
+	damageMin = 6.0
+	#Dano com a carga cheia. 20 = 10 corações. Se ficar menor que damageMin, os dois são trocados.
+	# Default: 20.0
+	# Range: 0.0 ~ 100.0
+	damageMax = 20.0
+	#Raio da explosão com a carga mínima, em blocos (padrão 2).
+	# Default: 2.0
+	# Range: 0.5 ~ 8.0
+	radiusMin = 2.0
+	#Raio da explosão com a carga cheia, em blocos (padrão 5). Se ficar menor que radiusMin, os dois são trocados.
+	# Default: 5.0
+	# Range: 0.5 ~ 8.0
+	radiusMax = 5.0
+	#Empurrão com a carga mínima, além da repulsão do dano (a repulsão normal do jogo é 0.4). Quem resiste à repulsão é empurrado menos.
+	# Default: 0.4
+	# Range: 0.0 ~ 5.0
+	knockbackMin = 0.4
+	#Empurrão com a carga cheia.
+	# Default: 1.6
+	# Range: 0.0 ~ 5.0
+	knockbackMax = 1.6
+	#Distância que o orbe percorre, em blocos, antes de explodir (padrão 109).
+	# Default: 109.0
+	# Range: 4.0 ~ 160.0
+	range = 109.0
+	#Velocidade do orbe, em blocos por tick (padrão 3.64, uns 73 blocos por segundo).
+	# Default: 3.64
+	# Range: 0.3 ~ 5.0
+	orbSpeed = 3.64
+	#Fração da velocidade com que o T-Rex anda montado enquanto o dono segura a tecla (padrão 0.5 = metade).
+	# Default: 0.5
+	# Range: 0.1 ~ 1.0
+	chargeSpeedFactor = 0.5
+
+#Passiva do T-Rex Eclipse (RF22): à noite ele regenera vida e fica mais rápido; o albino tem a mesma passiva também de dia. Vale na hora.
+[eclipsePassive]
+	#Vida regenerada a cada intervalo (em pontos de vida; 1 = meio coração). Com 0, não regenera.
+	# Default: 1.0
+	# Range: 0.0 ~ 40.0
+	regenAmount = 1.0
+	#De quantos em quantos ticks regenera. 80 = 4 segundos.
+	# Default: 80
+	# Range: 10 ~ 1200
+	regenIntervalTicks = 80
+	#Aumento da velocidade de movimento enquanto a passiva está ligada (0.10 = +10%). Vale também montado.
+	# Default: 0.1
+	# Range: 0.0 ~ 1.0
+	speedBonus = 0.1
+	#De quantos em quantos ticks confere se é noite (60 = 3 segundos; não é a cada tick, para não pesar).
+	# Default: 60
+	# Range: 20 ~ 1200
+	checkIntervalTicks = 60
+
+#Corrida do T-Rex (RF56): vale para o T-Rex comum, o de Fogo, o do Rock e o Eclipse quando CORREM (montado com sprint e a IA perseguindo um alvo).
+#A caminhada não muda. O atributo Speed individual e o bônus noturno do Eclipse multiplicam por cima. Vale na hora.
+[trexRun]
+	#Multiplicador da velocidade de corrida (0.7 = 30% mais lento que antes do RF56; 1.0 = como antes).
+	# Default: 0.7
+	# Range: 0.3 ~ 1.5
+	speedMultiplier = 0.7
+	#Multiplicador da velocidade quando controlado pela IA (sem piloto: correr atrás de alvo) (RF173).
+	# Default: 1.25
+	# Range: 0.1 ~ 5.0
+	aiSpeedMultiplier = 1.25
+
+#Tempo dos ovos (RF56), em ticks (20 ticks = 1 segundo). Um progresso salvo no meio continua de onde parou: só a meta muda. Vale na hora.
+[eggs]
+	#Ticks para a Máquina de Fósseis I encher a barra e sortear o ovo (1200 = 60 segundos).
+	# Default: 1200
+	# Range: 100 ~ 24000
+	incubatorTicks = 1200
+	#Ticks para um ovo chocar no ninho sem calor (12000 = 10 minutos). Com uma fonte de calor perto, leva a metade.
+	# Default: 12000
+	# Range: 600 ~ 72000
+	nestHatchTicks = 12000
+
+#Giro com inércia (RF15): quantos graus por tick (20 ticks = 1 segundo) o corpo do dinossauro pode virar, sozinho ou montado.
+#Menor = curva mais lenta e pesada. 90 é o limite do jogo, sem inércia. O Velociraptor não muda. Vale na hora.
+[turning]
+	#Giro máximo do T-Rex, em graus por tick.
+	# Default: 10.0
+	# Range: 1.0 ~ 90.0
+	trexMaxTurnDegrees = 10.0
+	#Giro máximo do Triceratops, em graus por tick.
+	# Default: 9.0
+	# Range: 1.0 ~ 90.0
+	triceratopsMaxTurnDegrees = 9.0
+	#Giro máximo do Estegossauro, em graus por tick. O giro de costas do golpe de cauda não usa este limite.
+	# Default: 7.0
+	# Range: 1.0 ~ 90.0
+	stegosaurusMaxTurnDegrees = 7.0
+
+#Cores (RF01.23).
+[colors]
+	#Chance, em porcentagem, de um dinossauro novo nascer com a cor rara (albino). 0 desliga; 100 faz todos nascerem albinos.
+	# Default: 5
+	# Range: 0 ~ 100
+	rareVariantChancePercent = 5
+
+#Comportamento dos dinossauros selvagens. Vale na hora.
+[behavior]
+	#Se desligado, o T-Rex selvagem ignora jogadores (continua caçando outros mobs e revida se for atacado).
+	trexAttacksPlayers = true
+	#Se desligado, o Velociraptor selvagem ignora jogadores (continua caçando outros mobs e revida se for atacado).
+	raptorsAttackPlayers = true
+	#Quantos outros Velociraptors selvagens atendem o chamado do bando quando um acha uma presa. 0 desliga o chamado.
+	# Default: 6
+	# Range: 0 ~ 16
+	raptorPackSize = 6
+
+#Vida parada (RF79): ritual antes de deitar, sono com respiração lenta e Zzz, bocejo e espreguiçar ao acordar e manias quando parado.
+#Só mexe em animação e partículas (nenhum dano, nenhum bloco). Desligado, tudo volta ao comportamento de antes. Vale na hora.
+[idleLife]
+	#Liga a vida parada. Desligado: sem ritual, sem Zzz, sem despertar e sem as manias novas.
+	enabled = true
+	#Chance, em %, de uma mania (olhar em volta, farejar, balançar a cauda) acontecer a cada ciclo de 10 a 20 segundos parado. 0 desliga só as manias.
+	# Default: 60
+	# Range: 0 ~ 100
+	maniaChancePercent = 60
+
+#Atributos base de cada espécie, antes da variação de tamanho e velocidade.
+#Valem para dinossauros que nascem ou carregam depois da mudança: saia do mundo e entre de novo para atualizar os que já existem.
+#Ao carregar, a vida atual acompanha a proporção da vida máxima (100 de 200 vira 200 de 400 se a vida base dobrar).
+[baseAttributes]
+
+	#T-Rex.
+	[baseAttributes.trex]
+		#Vida máxima base (antes da variação de tamanho).
+		# Default: 200.0
+		# Range: 1.0 ~ 1024.0
+		maxHealth = 200.0
+		#Dano de ataque base (antes da variação de tamanho).
+		# Default: 14.0
+		# Range: 0.0 ~ 100.0
+		attackDamage = 14.0
+		#Velocidade de movimento base (antes da variação de velocidade). Para comparar: o jogador anda a 0.1.
+		# Default: 0.3
+		# Range: 0.05 ~ 2.0
+		movementSpeed = 0.3
+
+	#Triceratops.
+	[baseAttributes.triceratops]
+		#Vida máxima base (antes da variação de tamanho).
+		# Default: 160.0
+		# Range: 1.0 ~ 1024.0
+		maxHealth = 160.0
+		#Dano de ataque base (antes da variação de tamanho).
+		# Default: 10.0
+		# Range: 0.0 ~ 100.0
+		attackDamage = 10.0
+		#Velocidade de movimento base (antes da variação de velocidade). Para comparar: o jogador anda a 0.1.
+		# Default: 0.25
+		# Range: 0.05 ~ 2.0
+		movementSpeed = 0.25
+
+	#Velociraptor.
+	[baseAttributes.velociraptor]
+		#Vida máxima base (antes da variação de tamanho).
+		# Default: 40.0
+		# Range: 1.0 ~ 1024.0
+		maxHealth = 40.0
+		#Dano de ataque base (antes da variação de tamanho).
+		# Default: 6.0
+		# Range: 0.0 ~ 100.0
+		attackDamage = 6.0
+		#Velocidade de movimento base (antes da variação de velocidade). Para comparar: o jogador anda a 0.1.
+		# Default: 0.266
+		# Range: 0.05 ~ 2.0
+		movementSpeed = 0.266
+
+	#Estegossauro.
+	[baseAttributes.stegosaurus]
+		#Vida máxima base (antes da variação de tamanho).
+		# Default: 180.0
+		# Range: 1.0 ~ 1024.0
+		maxHealth = 180.0
+		#Dano de ataque base (antes da variação de tamanho).
+		# Default: 16.0
+		# Range: 0.0 ~ 100.0
+		attackDamage = 16.0
+		#Velocidade de movimento base (antes da variação de velocidade). Para comparar: o jogador anda a 0.1.
+		# Default: 0.22
+		# Range: 0.05 ~ 2.0
+		movementSpeed = 0.22
+
+	#Braquiossauro.
+	[baseAttributes.brachiosaurus]
+		#Vida máxima base (antes da variação de tamanho).
+		# Default: 240.0
+		# Range: 1.0 ~ 1024.0
+		maxHealth = 240.0
+		#Dano de ataque base (antes da variação de tamanho).
+		# Default: 12.0
+		# Range: 0.0 ~ 100.0
+		attackDamage = 12.0
+		#Velocidade de movimento base (antes da variação de velocidade). Para comparar: o jogador anda a 0.1.
+		# Default: 0.21
+		# Range: 0.05 ~ 2.0
+		movementSpeed = 0.21
+
+	#Espinossauro.
+	[baseAttributes.spinosaurus]
+		#Vida máxima base (antes da variação de tamanho).
+		# Default: 200.0
+		# Range: 1.0 ~ 1024.0
+		maxHealth = 200.0
+		#Dano de ataque base (antes da variação de tamanho).
+		# Default: 14.0
+		# Range: 0.0 ~ 100.0
+		attackDamage = 14.0
+		#Velocidade de movimento base (antes da variação de velocidade). Para comparar: o jogador anda a 0.1.
+		# Default: 0.27
+		# Range: 0.05 ~ 2.0
+		movementSpeed = 0.27
+
+	#Mosassauro e variantes.
+	[baseAttributes.mosasaurus]
+		#Vida máxima base (antes da variação de tamanho).
+		# Default: 180.0
+		# Range: 1.0 ~ 1024.0
+		maxHealth = 180.0
+		#Dano de ataque base (antes da variação de tamanho).
+		# Default: 16.0
+		# Range: 0.0 ~ 100.0
+		attackDamage = 16.0
+		#Velocidade de movimento base (antes da variação de velocidade). Para comparar: o jogador anda a 0.1.
+		# Default: 1.2
+		# Range: 0.05 ~ 2.0
+		movementSpeed = 1.2
+
+#Lupa (RF06): os cortes que classificam tamanho, velocidade, mordida e montaria.
+#Cada grupo precisa estar em ordem crescente; se não estiver, o grupo inteiro volta aos padrões (e um aviso vai para o log).
+#Vale na hora, para a próxima ficha aberta.
+[magnifier]
+	#Tamanho abaixo disto: Minúsculo.
+	# Default: 0.8
+	# Range: 0.1 ~ 3.0
+	sizeTinyBelow = 0.8
+	#Tamanho abaixo disto (e a partir do corte anterior): Pequeno.
+	# Default: 0.93
+	# Range: 0.1 ~ 3.0
+	sizeSmallBelow = 0.93
+	#Tamanho até isto (inclusive): Médio.
+	# Default: 1.07
+	# Range: 0.1 ~ 3.0
+	sizeMediumUpTo = 1.07
+	#Tamanho até isto (inclusive): Grande. Acima: Gigante.
+	# Default: 1.2
+	# Range: 0.1 ~ 3.0
+	sizeLargeUpTo = 1.2
+	#Fator de velocidade abaixo disto: Lento.
+	# Default: 0.93
+	# Range: 0.1 ~ 2.0
+	speedSlowBelow = 0.93
+	#Fator de velocidade até isto (inclusive): Normal. Acima: Rápido.
+	# Default: 1.07
+	# Range: 0.1 ~ 2.0
+	speedNormalUpTo = 1.07
+	#Mordida (raiz do tamanho) abaixo disto: Fraca.
+	# Default: 0.95
+	# Range: 0.1 ~ 2.0
+	biteWeakBelow = 0.95
+	#Mordida (raiz do tamanho) até isto (inclusive): Normal. Acima: Forte.
+	# Default: 1.05
+	# Range: 0.1 ~ 2.0
+	biteNormalUpTo = 1.05
+	#Velocidade montado correndo abaixo disto: "Mais lento que um cavalo comum" (a média do cavalo do jogo é 0.225).
+	# Default: 0.225
+	# Range: 0.05 ~ 1.0
+	horseSpeedAverage = 0.225
+	#Velocidade montado correndo até isto (inclusive): "Como um bom cavalo" (o melhor cavalo do jogo tem 0.3375). Acima: "Mais rápido que qualquer cavalo".
+	# Default: 0.3375
+	# Range: 0.05 ~ 1.0
+	horseSpeedBest = 0.3375

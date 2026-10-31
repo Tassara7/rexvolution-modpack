@@ -1,0 +1,13 @@
+name = "Vitrail Shaders"
+filename = "vitrail-0.13.0-beta+mc26.3.jar"
+side = "client"
+
+[download]
+hash-format = "sha1"
+hash = "4535f7b2d81efd1683961468d47236595b066043"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 9163952
+project-id = 1649385

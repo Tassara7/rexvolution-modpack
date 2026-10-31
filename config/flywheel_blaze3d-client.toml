@@ -1,0 +1,6 @@
+#Log [FlywheelBlaze3D] diagnostics (backend selection, engine lifecycle, pipelines, periodic stats).
+debugLogging = true
+#Write every generated shader to <game dir>/flywheel_blaze3d_shaders/ when it is compiled.
+dumpShaders = false
+#With a Vitrail shader pack: every 10 s, read the expanded vertices back from the GPU and log the first ones.
+expansionReadback = false

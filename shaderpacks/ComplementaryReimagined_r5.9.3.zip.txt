@@ -1,0 +1,4 @@
+# Written by Vitrail's settings screen and by Iris, one NAME=value per line.
+# Only what differs from the pack's own defaults.
+# vitrail/options.txt is a different file, it is never written here, and it wins.
+WATER_STYLE_DEFINE=3

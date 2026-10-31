@@ -1,0 +1,34 @@
+#Raio (em blocos) em que a caixa é ouvida; o volume cai linearmente até 0 no limite.
+# Default: 64
+# Range: 4 ~ 256
+radius = 64
+#Duração máxima de uma música, em minutos.
+# Default: 15
+# Range: 1 ~ 15
+maxMinutes = 15
+#Apaga do cache do servidor arquivos não usados há mais de N dias (0 = nunca).
+# Default: 30
+# Range: 0 ~ 3650
+cacheDays = 30
+#Tamanho máximo do cache do servidor em MB; os menos usados saem primeiro.
+# Default: 1024
+# Range: 16 ~ 1000000
+cacheMaxMb = 1024
+#Máximo de músicas na fila de uma caixa.
+# Default: 100
+# Range: 1 ~ 500
+maxQueue = 100
+#Máximo de uploads de músicas simultâneos (todos os jogadores) no servidor.
+# Default: 4
+# Range: 1 ~ 64
+maxUploads = 4
+#Máximo de downloads de músicas simultâneos (todos os jogadores) no servidor.
+# Default: 8
+# Range: 1 ~ 128
+maxDownloads = 8
+#Caixa privada só pode ser quebrada pelo dono ou por operadores.
+protectPrivateBoxes = true
+#Máximo de MB que cada jogador (não operador) pode enviar ao servidor por hora; evita encher o disco.
+# Default: 300
+# Range: 1 ~ 1000000
+uploadMbPerHour = 300

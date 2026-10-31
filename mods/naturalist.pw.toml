@@ -1,0 +1,13 @@
+name = "Naturalist"
+filename = "naturalist-2.0.7-neoforge-26.3.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "a129f7bda99ca0a178751f13a9c39758428f1df6"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 9280579
+project-id = 627986
