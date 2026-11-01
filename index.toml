@@ -351,6 +351,11 @@ hash = "6080d5e4ad8cb8067e0a5740e88d11bfe406aca1828267ed3ea888fed13adbfd"
 metafile = true
 
 [[files]]
+file = "mods/immediatelyfast.pw.toml"
+hash = "bdb355067c96a55915cf0925fd4220b2cbfd7d199b6275f0adf48cce48bf5483"
+metafile = true
+
+[[files]]
 file = "mods/inventory-essentials.pw.toml"
 hash = "344415521054da7d9391443c5d1fa33356a97b2f9cdaf21d3dfaacb136f8fbc8"
 metafile = true
@@ -451,7 +456,7 @@ metafile = true
 
 [[files]]
 file = "mods/rexvolution-0.9.0.jar"
-hash = "ef77af8f1e09caac048bf535b9b1561c77802eb2c3e2f0933638a8a0d91ba3c0"
+hash = "bd0893e5c622640456e83e27d0a85810edc046c441991d606ccc9d763ad657cd"
 
 [[files]]
 file = "mods/shogi.pw.toml"
