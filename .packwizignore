@@ -3,3 +3,6 @@ prism/
 README.md
 .gitignore
 .gitattributes
+
+# Servidor dedicado (nao vai para os jogadores)
+servidor/
