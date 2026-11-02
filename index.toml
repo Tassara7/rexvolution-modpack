@@ -385,6 +385,10 @@ hash = "abd08c305d1aed7dd7d118b15da9c31518f806c42dc9c20870558c679c25c532"
 metafile = true
 
 [[files]]
+file = "mods/liso-1.0.0.jar"
+hash = "eb9c611c3f17ac58e132b9b5f06cc4ec16c010d191713c039303f59bc87c8158"
+
+[[files]]
 file = "mods/lithium.pw.toml"
 hash = "3b4a12e40b1758498f5b04cd3e2a8ce04b083f44d5ef1f3bddf4fb962dbf7870"
 metafile = true
