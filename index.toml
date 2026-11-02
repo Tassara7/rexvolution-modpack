@@ -174,14 +174,6 @@ file = "config/mezz_config/client/default/settings.ini"
 hash = "1febf6ff1d35f4ffe34d6e5444e3c9496155a6abf3f49eb4ef5650d102645249"
 
 [[files]]
-file = "config/naturalist-client.toml"
-hash = "3d626a28c780c6ff977a43d195335c066d48f4c1e4052a51c6339f86e5975791"
-
-[[files]]
-file = "config/naturalist-server.toml"
-hash = "6ab307d70183380a10a0cbc50de621c2d23d43946384b8c08531acec14eb8dbf"
-
-[[files]]
 file = "config/naturescompass-client.toml"
 hash = "a5d664ed8aeecd77bd09611cba93d5f8e3194da8140666d3e97a0c4973dd0981"
 
@@ -294,6 +286,10 @@ file = "mods/Terralith_v2.6.5+26.3-neoforge-patched.jar"
 hash = "ffe221f2b300eaa97bb0492c2202147ae201938e26e16f5f199c7757288efe7d"
 
 [[files]]
+file = "mods/alexsmobs-2.2.4-neoforge+26.3.0.98-compilado.jar"
+hash = "923bf650ba56869b8a5f11f2c9df7f6a9609888066f79ef8c3650f3245d9fecd"
+
+[[files]]
 file = "mods/appleskin.pw.toml"
 hash = "63cc6376e906a2a5dbf0b533736706e2d73e4caff41c26968f0f41ec39f584cc"
 metafile = true
@@ -310,6 +306,11 @@ hash = "41e74fc0ad0a3ab13603535ccc1cb7ee3b039ac6a84aad88aad0f3347adee25c"
 [[files]]
 file = "mods/clumps.pw.toml"
 hash = "f8e2132c46d1f1253285ba4ebf293db712b76cb7f882ce33d7ef73fa11f48c80"
+metafile = true
+
+[[files]]
+file = "mods/codxlib.pw.toml"
+hash = "aa4c805e51e367611d2ace986fe6278caa3533856698ab7d09523e5a1545185f"
 metafile = true
 
 [[files]]
@@ -441,11 +442,6 @@ metafile = true
 [[files]]
 file = "mods/mouse-tweaks.pw.toml"
 hash = "947c0322f9c5c6362c6010b1ba539681b2dd806bef2505e9fcd7bf45b7b8734a"
-metafile = true
-
-[[files]]
-file = "mods/naturalist.pw.toml"
-hash = "e601fe5b6243bf7b857aaf4bd8be7b41968d903dd8d880221869738ccccc8d86"
 metafile = true
 
 [[files]]
