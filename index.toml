@@ -320,7 +320,7 @@ metafile = true
 
 [[files]]
 file = "mods/create-adapted-26.3-1.31-public-external-assets-patched.jar"
-hash = "f3ac0a6b6433d929bf0fcac146eea2fa24014dded5895eb17c57b38df6246eb9"
+hash = "d26d5faf758de7a460001d96f7bd24d88c8722dee99f2489967b2a105cd7eab5"
 
 [[files]]
 file = "mods/diorama.pw.toml"
