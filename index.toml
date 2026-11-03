@@ -456,7 +456,7 @@ metafile = true
 
 [[files]]
 file = "mods/rexvolution-0.9.0.jar"
-hash = "bd0893e5c622640456e83e27d0a85810edc046c441991d606ccc9d763ad657cd"
+hash = "44a68e62dfeb24761f20714635fbab0980c196ad1d4d4d50bbec57d4c360dfce"
 
 [[files]]
 file = "mods/shogi.pw.toml"
