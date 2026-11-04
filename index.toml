@@ -301,7 +301,7 @@ metafile = true
 
 [[files]]
 file = "mods/caixadesom-1.0.0.jar"
-hash = "41e74fc0ad0a3ab13603535ccc1cb7ee3b039ac6a84aad88aad0f3347adee25c"
+hash = "2645fa9b56cf0ae6b81596396b17e12dd4e2bbf09e24b218e0bbb720ba2cc028"
 
 [[files]]
 file = "mods/clumps.pw.toml"
@@ -456,7 +456,7 @@ metafile = true
 
 [[files]]
 file = "mods/rexvolution-0.9.0.jar"
-hash = "44a68e62dfeb24761f20714635fbab0980c196ad1d4d4d50bbec57d4c360dfce"
+hash = "6888f41a5da9d024dae1b7c99c484f641abfb7b768f7275185dc6c9fd123dd3e"
 
 [[files]]
 file = "mods/shogi.pw.toml"
